@@ -100,8 +100,10 @@
 
 ### 👤 Usuário:
 
-Caro Gemmini, retomamos o projeto 04 do TCC da Mara. Estamos na fase de escrita do TCC. Rodamos todas as análies e os resultados podem ser vistos ao rodar os notebooks. Entretanto, ao sincronizar a pasta local com a remota no Google drive, foram identificados alguns conflitos pelo RClone. Sendo assim, entendo que a primeira ação a ser feita é limpar as pastas do projeto, identificando os os arquivos que devam ser mantidos e os que devam ser deletados do projeto
-
+Caro Gemmini, retomamos o projeto 04 do TCC da Mara. Estamos na fase de escrita do TCC. Rodamos todas as análies e os resultados podem ser vistos ao rodar os notebooks. Entretanto, ao sincronizar a pasta local com a remota no Google drive, foram identificados alguns conflitos pelo RClone. Sendo assim, entendo que a primeira ação a ser feita é limpar as pastas do projeto, identificando os os arquivos que devam ser mantidos e os que devam ser deletados do projeto
+
+
+
 Pode analisar todo o projeto e identificar os arquivos que devam ser mantidos e os que devam ser deletados do projeto?
 
 
@@ -127,13 +129,13 @@ Durante a sincronização, o RClone espelhou o Google Drive e **apagou localment
 
 Todos os arquivos com sufixo `.conflict1` foram gerados por pequenas discrepâncias de quebra de linha (LF do Linux/Drive vs. CRLF do Windows) ou por versões antigas salvas na nuvem. Nenhum deles contém dados inéditos:
 
-| Arquivo Conflitante | Análise Comparativa | Ação Recomendada |
-| :--- | :--- | :---: |
-| `Data/Candidatos.csv.conflict1` | **100% idêntico** ao oficial (`Candidatos.csv`). Ambos têm exatamente **244.007 linhas**. A diferença de 244 KB no tamanho se deve exclusivamente à quebra de linha (CRLF vs LF). | **DELETAR** |
-| `Notebooks/notePerfisCandidatos.ipynb.conflict1` | Versão preliminar e incompleta com apenas **19 células**. O arquivo oficial possui **45 células** com todo o detalhamento metodológico e saídas completas. | **DELETAR** |
-| `environment.yml.conflict1` | Idêntico ao oficial `environment.yml` (diferença apenas de CRLF vs LF). | **DELETAR** |
-| `requirements.txt.conflict1` | Idêntico ao oficial `requirements.txt` (diferença apenas de CRLF vs LF). | **DELETAR** |
-| `pyrefly.toml.conflict1` | Idêntico ao oficial `pyrefly.toml` (diferença apenas de CRLF vs LF). | **DELETAR** |
+| Arquivo Conflitante                              | Análise Comparativa                                                                                                                                                               | Ação Recomendada |
+| :----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------: |
+| `Data/Candidatos.csv.conflict1`                  | **100% idêntico** ao oficial (`Candidatos.csv`). Ambos têm exatamente **244.007 linhas**. A diferença de 244 KB no tamanho se deve exclusivamente à quebra de linha (CRLF vs LF). |   **DELETAR**    |
+| `Notebooks/notePerfisCandidatos.ipynb.conflict1` | Versão preliminar e incompleta com apenas **19 células**. O arquivo oficial possui **45 células** com todo o detalhamento metodológico e saídas completas.                        |   **DELETAR**    |
+| `environment.yml.conflict1`                      | Idêntico ao oficial `environment.yml` (diferença apenas de CRLF vs LF).                                                                                                           |   **DELETAR**    |
+| `requirements.txt.conflict1`                     | Idêntico ao oficial `requirements.txt` (diferença apenas de CRLF vs LF).                                                                                                          |   **DELETAR**    |
+| `pyrefly.toml.conflict1`                         | Idêntico ao oficial `pyrefly.toml` (diferença apenas de CRLF vs LF).                                                                                                              |   **DELETAR**    |
 
 ---
 
@@ -141,10 +143,10 @@ Todos os arquivos com sufixo `.conflict1` foram gerados por pequenas discrepânc
 
 Na pasta [Notebooks/](file:///d:/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks), foram encontradas duas versões ativas:
 
-| Notebook | Células | Características | Recomendação |
-| :--- | :---: | :--- | :---: |
-| [notePerfisCandidatos.ipynb](file:///d:/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks/notePerfisCandidatos.ipynb) | **45** | **Versão oficial e completa**. Possui títulos acadêmicos, detalhamento de cada etapa, análise isolada das 4 variáveis (Renda, Cor/Raça, Idade e **Sexo**), Qui-Quadrado, ACM com Benzécri e Biplot com execução sequencial limpa (células 1 a 21). | **MANTER** (Versão Oficial) |
-| [notePerfisCandidatos_V2.ipynb](file:///d:/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks/notePerfisCandidatos_V2.ipynb) | 42 | Versão intermediária/paralela de teste. Não contempla a análise isolada de **Sexo**, possui execuções desordenadas e termina com uma célula de depuração (`print(plt.colormaps())`). | **ARQUIVAR OU DELETAR** (Já preservado no histórico do Git) |
+| Notebook                                                                                                                                       | Células | Características                                                                                                                                                                                                                                    |                        Recomendação                         |
+| :--------------------------------------------------------------------------------------------------------------------------------------------- | :-----: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------: |
+| [notePerfisCandidatos.ipynb](file:///d:/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks/notePerfisCandidatos.ipynb)       | **45**  | **Versão oficial e completa**. Possui títulos acadêmicos, detalhamento de cada etapa, análise isolada das 4 variáveis (Renda, Cor/Raça, Idade e **Sexo**), Qui-Quadrado, ACM com Benzécri e Biplot com execução sequencial limpa (células 1 a 21). |                 **MANTER** (Versão Oficial)                 |
+| [notePerfisCandidatos_V2.ipynb](file:///d:/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks/notePerfisCandidatos_V2.ipynb) |   42    | Versão intermediária/paralela de teste. Não contempla a análise isolada de **Sexo**, possui execuções desordenadas e termina com uma célula de depuração (`print(plt.colormaps())`).                                                               | **ARQUIVAR OU DELETAR** (Já preservado no histórico do Git) |
 
 ---
 
@@ -249,13 +251,20 @@ Deseja que **eu execute esses passos agora mesmo** para você?
 
 ### 👤 Usuário:
 
-To https://github.com/Sandro-Ribeiro/Mara_Projeto4.git
- ! [rejected]        main -> main (non-fast-forward)
-error: failed to push some refs to 'https://github.com/Sandro-Ribeiro/Mara_Projeto4.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. If you want to integrate the remote changes,
-hint: use 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+To https://github.com/Sandro-Ribeiro/Mara_Projeto4.git
+
+ ! [rejected]        main -> main (non-fast-forward)
+
+error: failed to push some refs to 'https://github.com/Sandro-Ribeiro/Mara_Projeto4.git'
+
+hint: Updates were rejected because the tip of your current branch is behind
+
+hint: its remote counterpart. If you want to integrate the remote changes,
+
+hint: use 'git pull' before pushing again.
+
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
 (mara-projs) PS D:\MyProjects\IFTM\Orientacao\ECD\2025\Mara_Oliveira\Projeto4>
 
 
@@ -438,8 +447,10 @@ Por onde você gostaria de começar a redação?
 
 Na criação da variável perfil, de modo reduzir extensão das observações. Poderíamos nomear os perfis como Perfil_01 a Perfil_nn?
 
-# Criar uma coluna de nome descritivo do perfil para gráficos
-df_perfil['Perfil'] = df_perfil['CorRaca'] + " | " + df_perfil['RendaFamiliar'] + " | " + df_perfil['FaixaEtaria'] + " | " + df_perfil['Sexo']
+# Criar uma coluna de nome descritivo do perfil para gráficos
+
+df_perfil['Perfil'] = df_perfil['CorRaca'] + " | " + df_perfil['RendaFamiliar'] + " | " + df_perfil['FaixaEtaria'] + " | " + df_perfil['Sexo']
+
 df_perfil.head()
 
 
@@ -535,16 +546,16 @@ A confusão normalmente acontece por dois motivos:
 
 ### O que significa cada linha do retorno:
 
-| Métrica | O que significa na prática | Exemplo / Interpretação |
-| :--- | :--- | :--- |
-| **`count`** | **Quantidade de Perfis** identificados na base | Não é o número de pessoas! É quantos perfis diferentes passaram no corte amostral (> 100 alunos). |
-| **`mean`** | **Média de alunos por perfil** | Em média, quantos ingressantes históricos cada perfil reuniu. |
-| **`std`** | **Desvio padrão** | Mostra que existem perfis muito pequenos e outros gigantescos. |
-| **`min`** | **Menor perfil analisado** | O número de alunos do menor perfil (será próximo de 100, devido ao filtro `> 100`). |
-| **`25%`** | **1º Quartil** | 25% dos perfis têm menos do que esse volume de alunos. |
-| **`50%`** | **Mediana** | O ponto central: metade dos perfis tem menos e metade tem mais alunos que esse valor. |
-| **`75%`** | **3º Quartil** | 75% dos perfis têm até esse número de alunos. |
-| **`max`** | **Maior perfil de todos** | O perfil sociodemográfico mais populoso da Rede Federal (geralmente alunos de 15 a 19 anos de baixa renda). |
+| Métrica     | O que significa na prática                     | Exemplo / Interpretação                                                                                     |
+| :---------- | :--------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
+| **`count`** | **Quantidade de Perfis** identificados na base | Não é o número de pessoas! É quantos perfis diferentes passaram no corte amostral (> 100 alunos).           |
+| **`mean`**  | **Média de alunos por perfil**                 | Em média, quantos ingressantes históricos cada perfil reuniu.                                               |
+| **`std`**   | **Desvio padrão**                              | Mostra que existem perfis muito pequenos e outros gigantescos.                                              |
+| **`min`**   | **Menor perfil analisado**                     | O número de alunos do menor perfil (será próximo de 100, devido ao filtro `> 100`).                         |
+| **`25%`**   | **1º Quartil**                                 | 25% dos perfis têm menos do que esse volume de alunos.                                                      |
+| **`50%`**   | **Mediana**                                    | O ponto central: metade dos perfis tem menos e metade tem mais alunos que esse valor.                       |
+| **`75%`**   | **3º Quartil**                                 | 75% dos perfis têm até esse número de alunos.                                                               |
+| **`max`**   | **Maior perfil de todos**                      | O perfil sociodemográfico mais populoso da Rede Federal (geralmente alunos de 15 a 19 anos de baixa renda). |
 
 ---
 
@@ -809,13 +820,20 @@ Basta colar e rodar a opção que melhor atende à análise que você deseja faz
 
 Veja, esse comando não alterou em nada os nomes das variáveis
 
-# Limpeza de strings
-print(df.columns)
-
-df.columns = df.columns.str.strip()
-for col in df.select_dtypes(include='object').columns:
-    df[col] = df[col].astype(str).str.strip()
-
+# Limpeza de strings
+
+print(df.columns)
+
+
+
+df.columns = df.columns.str.strip()
+
+for col in df.select_dtypes(include='object').columns:
+
+    df[col] = df[col].astype(str).str.strip()
+
+
+
 print(df.columns)
 
 
@@ -939,7 +957,8 @@ Se você fizer essa renomeação, precisará apenas atualizar as linhas onde ess
 
 Aqui
 
-# Criar uma coluna de nome descritivo do perfil para gráficos
+# Criar uma coluna de nome descritivo do perfil para gráficos
+
 df['PERFIL'] = df['RACA'] + " | " + df['RENDA'] + " | " + df['FAIXA_ETARIA'] + " | " + df['SEXO']
 
 eu posso para cada combinação dar um nome para o perfil (ex: Perfi01) ao invês de adotar a combninação como o nome?
@@ -1002,7 +1021,8 @@ df_perfil.head()
 
 O que esse códifo retorne?
 
-stats_raca = df.groupby('RACA')['INGRESSANTES'].describe()
+stats_raca = df.groupby('RACA')['INGRESSANTES'].describe()
+
 print(stats_raca)
 
 
@@ -1016,14 +1036,14 @@ Esse código retorna uma **tabela de resumo estatístico** da coluna `INGRESSANT
 
 Você verá uma tabela onde cada linha é uma raça e as colunas são as 8 métricas clássicas da estatística:
 
-| Coluna | O que ela significa nesse agrupamento |
-| :--- | :--- |
-| **`count`** | Quantidade de **linhas/registros** da planilha que pertencem àquela raça. *(Atenção: não é o número de pessoas, é o número de linhas!)* |
-| **`mean`** | A **média de ingressantes** registrada por linha daquela raça. |
-| **`std`** | O desvio padrão (variabilidade dos registros). |
-| **`min`** | O menor número de ingressantes registrado em uma única linha daquela raça. |
-| **`25%`, `50%`, `75%`** | Os quartis e a mediana (o valor do meio) daquela raça. |
-| **`max`** | O maior número de ingressantes que apareceu em uma única linha para aquela raça. |
+| Coluna                  | O que ela significa nesse agrupamento                                                                                                   |
+| :---------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| **`count`**             | Quantidade de **linhas/registros** da planilha que pertencem àquela raça. *(Atenção: não é o número de pessoas, é o número de linhas!)* |
+| **`mean`**              | A **média de ingressantes** registrada por linha daquela raça.                                                                          |
+| **`std`**               | O desvio padrão (variabilidade dos registros).                                                                                          |
+| **`min`**               | O menor número de ingressantes registrado em uma única linha daquela raça.                                                              |
+| **`25%`, `50%`, `75%`** | Os quartis e a mediana (o valor do meio) daquela raça.                                                                                  |
+| **`max`**               | O maior número de ingressantes que apareceu em uma única linha para aquela raça.                                                        |
 
 ---
 
@@ -1195,8 +1215,10 @@ Se fôssemos analisar IF por IF, teríamos muitas amostras com 1 ou 2 alunos (am
 
 O dataframe resultante está filtrado por ser IF?
 
-# Filtro para Institutos Federais
-df = df[df['INST'].str.startswith('IF', na=False)]
+# Filtro para Institutos Federais
+
+df = df[df['INST'].str.startswith('IF', na=False)]
+
 df.shape
 
 
@@ -1296,10 +1318,12 @@ O resultado será exatamente `(201550, 15)`.
 
 Analise os resultados de 
 
-stats_raca = df.groupby(['RACA','REG'])['INGRESSANTES'].describe()
+stats_raca = df.groupby(['RACA','REGIAO'])['INGRESSANTES'].describe()
+
 print(stats_raca)
 
-stats_raca = df.groupby(['RACA','INST'])['INGRESSANTES'].describe()
+stats_raca = df.groupby(['RACA','INST'])['INGRESSANTES'].describe()
+
 print(stats_raca)
 
 
@@ -1375,9 +1399,12 @@ O **IFRS** aparece com os maiores números máximos da base (acima de 10 mil par
 
 Como calcular a taxa de cocnlusão
 
-df_raca = df.groupby(['RACA']).agg(
-    TOTAL_INGRESSANTES =('INGRESSANTES', 'sum'),
-    TOTAL_CONCLUINTES =('CONCLUINTES', 'sum')
+df_raca = df.groupby(['RACA']).agg(
+
+    TOTAL_INGRESSANTES =('INGRESSANTES', 'sum'),
+
+    TOTAL_CONCLUINTES =('CONCLUINTES', 'sum')
+
 ).reset_index()
 
 
@@ -1428,13 +1455,20 @@ df_raca_formatado
 
 NaN	 não é identificado em i
 
-# Remoção de classes sem informação declarada
-remover = ['S/I', 'Não Declarada', 'Não declarada']
-df = df[~df['RACA'].isin(remover)]
-df = df[~df['RENDA'].isin(remover)]
-df = df[~df['FAIXA_ETARIA'].isin(remover)]
-df = df[~df['SEXO'].isin(remover)]
-df = df[~df['CONCLUINTES'].isin(remover)]
+# Remoção de classes sem informação declarada
+
+remover = ['S/I', 'Não Declarada', 'Não declarada']
+
+df = df[~df['RACA'].isin(remover)]
+
+df = df[~df['RENDA'].isin(remover)]
+
+df = df[~df['FAIXA_ETARIA'].isin(remover)]
+
+df = df[~df['SEXO'].isin(remover)]
+
+df = df[~df['CONCLUINTES'].isin(remover)]
+
 df = df[~df['INGRESSANTES'].isin(remover)]
 
 
@@ -1559,8 +1593,10 @@ Então é melhor colocar os zeros em INGRESSANTES e CONCLUINTES
 
 Quando rodo 
 
-# Criação da variável taxa de conclusão
-df['TAXA_CONCLUSAO'] = df['CONCLUINTES']/df['INGRESSANTES']
+# Criação da variável taxa de conclusão
+
+df['TAXA_CONCLUSAO'] = df['CONCLUINTES']/df['INGRESSANTES']
+
 df.head()
 
 Devido a divisão por zero a taxa fia NaN
@@ -1639,9 +1675,12 @@ Fazendo dessa forma, **nenhuma linha fica como `NaN`**, não existe divisão por
 
 O que sugere? Não coloco 
 
-# Nas colunas numéricas, vazio (NaN) significa 0 alunos
-df['CONCLUINTES'] = df['CONCLUINTES'].fillna(0)
-df['INGRESSANTES'] = df['INGRESSANTES'].fillna(0)
+# Nas colunas numéricas, vazio (NaN) significa 0 alunos
+
+df['CONCLUINTES'] = df['CONCLUINTES'].fillna(0)
+
+df['INGRESSANTES'] = df['INGRESSANTES'].fillna(0)
+
 df['VAGAS'] = df['VAGAS'].fillna(0)
 
 
@@ -1698,14 +1737,14 @@ Acabei de calcular os números reais dessa agregação para a base dos Instituto
 
 ### O Resultado Real na Rede Federal:
 
-| Região (`REG`) | Total Ingressantes | Total Concluintes | Taxa de Conclusão (%) |
-| :--- | :---: | :---: | :---: |
-| **Sul** | 2.708.437 | 2.126.777 | **78,52%** |
-| **Sudeste** | 727.272 | 461.347 | **63,44%** |
-| *(Média Geral da Rede)* | *4.499.205* | *3.057.552* | ***67,96%*** |
-| **Norte** | 198.900 | 97.359 | **48,95%** |
-| **Nordeste** | 550.362 | 240.182 | **43,64%** |
-| **Centro-Oeste** | 314.234 | 131.887 | **41,97%** |
+| Região (`REG`)          | Total Ingressantes | Total Concluintes | Taxa de Conclusão (%) |
+| :---------------------- | :----------------: | :---------------: | :-------------------: |
+| **Sul**                 |     2.708.437      |     2.126.777     |      **78,52%**       |
+| **Sudeste**             |      727.272       |      461.347      |      **63,44%**       |
+| *(Média Geral da Rede)* |    *4.499.205*     |    *3.057.552*    |     ***67,96%***      |
+| **Norte**               |      198.900       |      97.359       |      **48,95%**       |
+| **Nordeste**            |      550.362       |      240.182      |      **43,64%**       |
+| **Centro-Oeste**        |      314.234       |      131.887      |      **41,97%**       |
 
 ---
 
@@ -1731,7 +1770,7 @@ Para gerar essa tabela no notebook:
 
 ```python
 # Taxa de conclusão agregada por Região
-df_reg = df.groupby('REG').agg(
+df_reg = df.groupby('REGIAO').agg(
     TOTAL_INGRESSANTES=('INGRESSANTES', 'sum'),
     TOTAL_CONCLUINTES=('CONCLUINTES', 'sum')
 ).reset_index()
@@ -1784,7 +1823,7 @@ ax = plt.gca()
 sns.barplot(
     data=df_reg,
     x='TAXA_CONCLUSAO',
-    y='REG',
+    y='REGIAO',
     palette=cores,
     alpha=0.85
 )
@@ -1872,8 +1911,8 @@ df_reg = df_reg.sort_values(by='TAXA_CONCLUSAO', ascending=False).reset_index(dr
 sns.barplot(
     data=df_reg,
     x='TAXA_CONCLUSAO',
-    y='REG',
-    order=df_reg['REG'],  # <-- Garante a ordem exata das linhas do DataFrame (do maior para o menor)
+    y='REGIAO',
+    order=df_reg['REGIAO'],  # <-- Garante a ordem exata das linhas do DataFrame (do maior para o menor)
     palette=cores,
     alpha=0.85
 )
@@ -1908,8 +1947,8 @@ ax = plt.gca()
 sns.barplot(
     data=df_reg,
     x='TAXA_CONCLUSAO',
-    y='REG',
-    order=df_reg['REG'],  # <-- Garante Maior (Sul) no topo até o Menor (Centro-Oeste) na base
+    y='REGIAO',
+    order=df_reg['REGIAO'],  # <-- Garante Maior (Sul) no topo até o Menor (Centro-Oeste) na base
     palette=cores,
     alpha=0.85
 )
@@ -2386,7 +2425,7 @@ Para rodar a primeira análise da seção **4.1.1 Dimensão Socioterritorial (Re
 # 4.1.1 Dimensão Socioterritorial: Região Geográfica
 tabela_reg, df_reg_inst = analisar_fator(
     df=df,
-    coluna_fator='REG',
+    coluna_fator='REGIAO',
     titulo_fator='Região Geográfica'
 )
 ```
@@ -2402,7 +2441,9 @@ Rode essas duas células no notebook e me avise o resultado. Assim que conferirm
 
 Só uma dúvida antes. Qual a diferença entre a duas linhas de código abaixo
 
-df['RENDA'] = df['RENDA'].fillna(0)
+df['RENDA'] = df['RENDA'].fillna(0)
+
+
 df['RENDA'] = df['RENDA'].map(mapa_renda).fillna(df['RENDA'])
 
 
@@ -2438,9 +2479,9 @@ Ela funciona em duas etapas:
 
 ### Resumo Prático:
 
-| Comando | Finalidade | Efeito |
-| :--- | :--- | :--- |
-| `.fillna(0)` | Preenchimento numérico | Substitui nulos pelo número `0`. *(Usar apenas em colunas de contagem de alunos)* |
+| Comando                     | Finalidade                      | Efeito                                                                                    |
+| :-------------------------- | :------------------------------ | :---------------------------------------------------------------------------------------- |
+| `.fillna(0)`                | Preenchimento numérico          | Substitui nulos pelo número `0`. *(Usar apenas em colunas de contagem de alunos)*         |
 | `.map(...).fillna(df[...])` | Recodificação categórica segura | Traduz as categorias mapeadas e **preserva intacto** tudo o que não estava no dicionário. |
 
 Ficou clara a distinção? Quando estiver pronto, podemos rodar as células da função e da Região!
@@ -2593,14 +2634,14 @@ Isso aconteceu por causa de um fenômeno estatístico chamado **concentração d
 
 Olhando para dentro de cada Instituto Federal da Região Sul:
 
-| Região | Instituto | Total Ingressantes | Total Concluintes | Taxa Real do IF |
-| :--- | :--- | :---: | :---: | :---: |
-| **Sul** | **IFRS** | **2.248.785** | **1.829.917** | **81,37%** |
-| **Sul** | **IFSUL** | **234.794** | **191.515** | **81,57%** |
-| Sul | IFSC | 113.129 | 47.219 | 41,74% |
-| Sul | IF Farroupilha | 42.721 | 24.380 | 57,07% |
-| Sul | IFC | 37.689 | 17.828 | 47,30% |
-| Sul | IFPR | 31.319 | 15.918 | 50,83% |
+| Região  | Instituto      | Total Ingressantes | Total Concluintes | Taxa Real do IF |
+| :------ | :------------- | :----------------: | :---------------: | :-------------: |
+| **Sul** | **IFRS**       |   **2.248.785**    |   **1.829.917**   |   **81,37%**    |
+| **Sul** | **IFSUL**      |    **234.794**     |    **191.515**    |   **81,57%**    |
+| Sul     | IFSC           |      113.129       |      47.219       |     41,74%      |
+| Sul     | IF Farroupilha |       42.721       |      24.380       |     57,07%      |
+| Sul     | IFC            |       37.689       |      17.828       |     47,30%      |
+| Sul     | IFPR           |       31.319       |      15.918       |     50,83%      |
 
 ---
 
@@ -2705,7 +2746,7 @@ Basta rodar a célula abaixo:
 from scipy.stats import tukey_hsd
 
 # 1. Separar as taxas dos IFs por região
-grupos_reg = {reg: grupo['TAXA_CONCLUSAO'].values for reg, grupo in df_reg_inst.groupby('REG')}
+grupos_reg = {reg: grupo['TAXA_CONCLUSAO'].values for reg, grupo in df_reg_inst.groupby('REGIAO')}
 nomes_regioes = list(grupos_reg.keys())
 valores_regioes = [grupos_reg[r] for r in nomes_regioes]
 
@@ -2771,11 +2812,11 @@ Cruzamos duas variáveis categóricas para todos os **4.499.205 alunos ingressan
 
 A tabela de contingência real montada com os dados do projeto foi esta:
 
-| Situação do Aluno | Sul | Sudeste | Norte | Nordeste | Centro-Oeste | **Total Brasil** |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Concluinte** | 2.126.777 | 461.347 | 97.359 | 240.182 | 131.887 | **3.057.552** |
-| **Não Concluinte** *(Evasão/Retenção)* | 581.660 | 265.925 | 101.541 | 310.180 | 182.347 | **1.441.653** |
-| **Total Ingressantes** | **2.708.437** | **727.272** | **198.900** | **550.362** | **314.234** | **4.499.205** |
+| Situação do Aluno                      |      Sul      |   Sudeste   |    Norte    |  Nordeste   | Centro-Oeste | **Total Brasil** |
+| :------------------------------------- | :-----------: | :---------: | :---------: | :---------: | :----------: | :--------------: |
+| **Concluinte**                         |   2.126.777   |   461.347   |   97.359    |   240.182   |   131.887    |  **3.057.552**   |
+| **Não Concluinte** *(Evasão/Retenção)* |    581.660    |   265.925   |   101.541   |   310.180   |   182.347    |  **1.441.653**   |
+| **Total Ingressantes**                 | **2.708.437** | **727.272** | **198.900** | **550.362** | **314.234**  |  **4.499.205**   |
 
 *(Nota: "Não Concluinte" é simplesmente `Ingressantes - Concluintes`)*.
 
@@ -2806,7 +2847,7 @@ Você pode rodar exatamente esse teste no seu notebook com poucas linhas usando 
 from scipy.stats import chi2_contingency
 
 # 1. Totalizar Concluintes e Ingressantes por Região
-df_chi = df.groupby('REG').agg(
+df_chi = df.groupby('REGIAO').agg(
     CONCLUINTES=('CONCLUINTES', 'sum'),
     INGRESSANTES=('INGRESSANTES', 'sum')
 ).reset_index()
@@ -2816,7 +2857,7 @@ df_chi['NAO_CONCLUINTES'] = df_chi['INGRESSANTES'] - df_chi['CONCLUINTES']
 
 # 3. Montar a Tabela de Contingência 2 x 5
 tabela_contingencia = df_chi[['CONCLUINTES', 'NAO_CONCLUINTES']].T
-tabela_contingencia.columns = df_chi['REG']
+tabela_contingencia.columns = df_chi['REGIAO']
 
 print("=== TABELA DE CONTINGÊNCIA (FREQUÊNCIAS OBSERVADAS) ===")
 print(tabela_contingencia)
@@ -2934,13 +2975,13 @@ Imagine que queremos comparar a altura dos estudantes de 5 salas de aula:
 
 ### Comparativo Direto:
 
-| Critério | ANOVA One-Way | Kruskal-Wallis |
-| :--- | :--- | :--- |
-| **Tipo de teste** | Paramétrico | Não-paramétrico |
-| **Métrica central** | Média ($\bar{x}$) | Postos / Mediana |
-| **Exige Normalidade?** | **Sim** (obrigatório) | **Não** (livre de distribuição) |
-| **Sensibilidade a Outliers** | Alta | Baixa (robusto) |
-| **Sensibilidade a amostras pequenas** | Vulnerável | Muito robusto |
+| Critério                              | ANOVA One-Way         | Kruskal-Wallis                  |
+| :------------------------------------ | :-------------------- | :------------------------------ |
+| **Tipo de teste**                     | Paramétrico           | Não-paramétrico                 |
+| **Métrica central**                   | Média ($\bar{x}$)     | Postos / Mediana                |
+| **Exige Normalidade?**                | **Sim** (obrigatório) | **Não** (livre de distribuição) |
+| **Sensibilidade a Outliers**          | Alta                  | Baixa (robusto)                 |
+| **Sensibilidade a amostras pequenas** | Vulnerável            | Muito robusto                   |
 
 ---
 
@@ -3192,20 +3233,20 @@ Depois de carregar a célula acima, você roda a análise da **Região** em pass
 
 ```python
 # 1. Preparar os dados e ver a tabela descritiva
-df_reg_inst, tabela_reg = preparar_dados_fator(df, 'REG')
+df_reg_inst, tabela_reg = preparar_dados_fator(df, 'REGIAO')
 print(tabela_reg.round(2).to_string(index=False))
 
 # 2. Verificar os pressupostos da ANOVA
-verificar_pressupostos_anova(df_reg_inst, 'REG')
+verificar_pressupostos_anova(df_reg_inst, 'REGIAO')
 
 # 3. Rodar a ANOVA One-Way de Fisher
-executar_anova_oneway(df_reg_inst, 'REG')
+executar_anova_oneway(df_reg_inst, 'REGIAO')
 
 # 4. Rodar o Kruskal-Wallis (Confirmação de Robustez)
-executar_kruskal_wallis(df_reg_inst, 'REG')
+executar_kruskal_wallis(df_reg_inst, 'REGIAO')
 
 # 5. Rodar o Teste de Tukey HSD (Comparações par a par)
-df_tukey_reg = executar_tukey_hsd(df_reg_inst, 'REG')
+df_tukey_reg = executar_tukey_hsd(df_reg_inst, 'REGIAO')
 ```
 
 Rode essas duas células no notebook! O fluxo fica muito intuitivo e a saída é extremamente limpa e organizada.
@@ -3230,10 +3271,10 @@ No TCC da Mara, nós estamos investigando o fenômeno sob **duas perspectivas co
 
 ### A Estrutura dos 2 Níveis de Análise:
 
-| Nível de Análise | Unidade Amostral | O que estamos medindo? | Teste Estatístico Adequado |
-| :--- | :--- | :--- | :--- |
-| **Nível 1: Institucional (Gestão)** | Os **38 Institutos Federais** | A **Média das taxas** de cada escola | **ANOVA One-Way**, **Kruskal-Wallis** e **Tukey HSD** |
-| **Nível 2: Discente (O Aluno)** | Os **4,5 milhões de alunos** | A **Taxa Ponderada** (chance do aluno se formar) | **Teste Qui-Quadrado ($\chi^2$)** e **ACM** |
+| Nível de Análise                    | Unidade Amostral              | O que estamos medindo?                           | Teste Estatístico Adequado                            |
+| :---------------------------------- | :---------------------------- | :----------------------------------------------- | :---------------------------------------------------- |
+| **Nível 1: Institucional (Gestão)** | Os **38 Institutos Federais** | A **Média das taxas** de cada escola             | **ANOVA One-Way**, **Kruskal-Wallis** e **Tukey HSD** |
+| **Nível 2: Discente (O Aluno)**     | Os **4,5 milhões de alunos**  | A **Taxa Ponderada** (chance do aluno se formar) | **Teste Qui-Quadrado ($\chi^2$)** e **ACM**           |
 
 ---
 
@@ -3422,7 +3463,7 @@ def executar_teste_quiquadrado(df, coluna_fator, titulo_fator=None):
 # Execução do Qui-Quadrado para o fator Região
 chi2_reg, p_reg, v_reg, tab_reg = executar_teste_quiquadrado(
     df=df,
-    coluna_fator='REG',
+    coluna_fator='REGIAO',
     titulo_fator='Região Geográfica'
 )
 ```
@@ -3848,7 +3889,7 @@ from plota_boxplot_fator import plota_boxplot_fator
 plota_boxplot_fator(
     df=df,
     df_inst=df_reg_inst,
-    coluna_fator='REG',
+    coluna_fator='REGIAO',
     titulo_fator='Região Geográfica'
 )
 ```
@@ -3908,7 +3949,7 @@ Agrupa a taxa real de cada Instituto Federal e exibe a tabela comparando a **Mé
 
 ```python
 # 1. Preparar a base e gerar a tabela descritiva
-df_reg_inst, tabela_reg = prepara_dados_fator(df, 'REG')
+df_reg_inst, tabela_reg = prepara_dados_fator(df, 'REGIAO')
 
 print("=== TABELA DESCRITIVA: REGIÃO GEOGRÁFICA ===")
 print(tabela_reg.round(2).to_string(index=False))
@@ -3922,7 +3963,7 @@ Testa se a chance de um estudante se formar depende significativamente da **Regi
 
 ```python
 # 2. Teste Qui-Quadrado de Independência (Nível Discente)
-chi2_reg, p_chi2_reg = executar_teste_quiquadrado(df, 'REG')
+chi2_reg, p_chi2_reg = executar_teste_quiquadrado(df, 'REGIAO')
 ```
 
 ---
@@ -3933,7 +3974,7 @@ Verifica formalmente se os dados cumprem a **Normalidade (Shapiro-Wilk)** e a **
 
 ```python
 # 3. Diagnóstico dos pressupostos da ANOVA
-pressupostos_reg = verifica_pressupostos_anova(df_reg_inst, 'REG')
+pressupostos_reg = verifica_pressupostos_anova(df_reg_inst, 'REGIAO')
 ```
 
 ---
@@ -3944,8 +3985,8 @@ Executa a ANOVA de Fisher (paramétrica) e o Kruskal-Wallis (robustez não-param
 
 ```python
 # 4. Testes de Comparação Global de Médias e Postos
-f_reg, p_anova_reg = executa_anova_oneway(df_reg_inst, 'REG')
-h_reg, p_kruskal_reg = executar_kruskal_wallis(df_reg_inst, 'REG')
+f_reg, p_anova_reg = executa_anova_oneway(df_reg_inst, 'REGIAO')
+h_reg, p_kruskal_reg = executar_kruskal_wallis(df_reg_inst, 'REGIAO')
 ```
 
 ---
@@ -3956,7 +3997,7 @@ Compara par a par quem difere de quem (Sul vs Sudeste, Sul vs Nordeste, etc.):
 
 ```python
 # 5. Pós-teste de Tukey HSD
-df_tukey_reg = executar_tukey_hsd(df_reg_inst, 'REG')
+df_tukey_reg = executar_tukey_hsd(df_reg_inst, 'REGIAO')
 ```
 
 ---
@@ -3970,7 +4011,7 @@ Gera a figura com as caixas interquartis, o ponto vermelho com a média da regi�
 plota_boxplot_fator(
     df=df,
     df_inst=df_reg_inst,
-    coluna_fator='REG',
+    coluna_fator='REGIAO',
     titulo_fator='Região Geográfica'
 )
 ```
@@ -3979,7 +4020,7 @@ plota_boxplot_fator(
 
 ### Por que esse pipeline ficou excelente?
 
-1. **Reprodutibilidade Total:** Para o próximo fator (por exemplo, Cor/Raça — `RACA`), basta trocar `'REG'` por `'RACA'` nessas mesmas células!
+1. **Reprodutibilidade Total:** Para o próximo fator (por exemplo, Cor/Raça — `RACA`), basta trocar `'REGIAO'` por `'RACA'` nessas mesmas células!
 2. **Organização Acadêmica Impecável:** Em 6 passos rápidos, você extrai o resumo descritivo, valida nos alunos com Qui-Quadrado, valida nas instituições com ANOVA/Tukey e encerra com o gráfico formatado para o artigo.
 
 ---
@@ -4026,7 +4067,7 @@ sys.path.append('../scripts')
 ```
 
 O `'../scripts'` significa exatamente: *"Python, suba um nível (saia de `Notebooks/`) e olhe também dentro da pasta `scripts/`"*.
-
+REGIAO
 Basta rodar essa linha uma única vez na primeira célula do notebook e todos os seus `imports` funcionarão normalmente!
 
 ---
@@ -4053,7 +4094,7 @@ Basta usar o parâmetro `justify='left'` e um formatador simples para a primeira
 
 ```python
 # Alinha o cabeçalho e os nomes da primeira coluna à esquerda
-coluna = 'REG'
+coluna = 'REGIAO'
 largura = max(tabela_reg[coluna].str.len().max(), len(coluna)) + 2
 
 print(
@@ -4086,7 +4127,7 @@ Em vez de usar `print()`, você pode exibir a tabela nativa do Jupyter com as ca
 (
     tabela_reg.style
     .format(precision=2)
-    .set_properties(subset=['REG'], **{'text-align': 'left'})
+    .set_properties(subset=['REGIAO'], **{'text-align': 'left'})
     .hide(axis='index')
 )
 ```
@@ -4096,7 +4137,7 @@ Essa Opção 2 fica com visual de tabela de artigo científico, com linhas inter
 ---
 
 <a id="interacao-59"></a>
-## Interação 59 — 07/10/2026 às 16:04:42
+REGIAOnteração 59 — 07/10/2026 às 16:04:42
 
 ### 👤 Usuário:
 
@@ -4132,7 +4173,7 @@ def exibe_tabela(tabela, col_texto):
         print(linha)
 
 # Como usar no notebook:
-exibe_tabela(tabela_reg, 'REG')
+exibe_tabela(tabela_reg, 'REGIAO')
 ```
 
 **O resultado na tela fica impecável:**
@@ -4155,9 +4196,9 @@ Se preferir a visualização visual do Jupyter (tabela com fundo cinza/branco al
 
 ```python
 tabela_reg.style.format(precision=2).set_properties(
-    subset=['REG'], **{'text-align': 'left'}
+    subset=['REGIAO'], **{'text-align': 'left'}
 ).set_properties(
-    subset=[c for c in tabela_reg.columns if c != 'REG'], **{'text-align': 'right'}
+    subset=[c for c in tabela_reg.columns if c != 'REGIAO'], **{'text-align': 'right'}
 ).hide(axis='index')
 ```
 
@@ -4172,8 +4213,9 @@ Se você quiser, posso até adicionar a função `exibe_tabela` diretamente dent
 
 Como aplico a função para fomatar a tabela aqui?
 
-# Preparar a base e gerar a tabela descritiva
-df_reg_inst, tabela_reg = prepara_dados_fator(df, 'REG')
+# Preparar a base e gerar a tabela descritiva
+
+df_reg_inst, tabela_reg = prepara_dados_fator(df, 'REGIAO')
 
 
 ### 🤖 Antigravity / Gemini:
@@ -4198,10 +4240,10 @@ Substitua o antigo `print(tabela_reg.to_string(...))` por uma chamada direta à 
 
 ```python
 # Preparar a base e gerar a tabela descritiva
-df_reg_inst, tabela_reg = prepara_dados_fator(df, 'REG')
+df_reg_inst, tabela_reg = prepara_dados_fator(df, 'REGIAO')
 
 print("=== TABELA DESCRITIVA: REGIÃO GEOGRÁFICA ===")
-formata_tabela(tabela_reg, 'REG')
+formata_tabela(tabela_reg, 'REGIAO')
 ```
 
 ---
@@ -4211,13 +4253,13 @@ formata_tabela(tabela_reg, 'REG')
 > Na **linha 31** do seu arquivo [`formata_tabela.py`](file:///d:/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/scripts/formata_tabela.py), a linha de exemplo ficou sem o `#` de comentário:
 > ```python
 > # Como usar no notebook:
-> exibe_tabela(tabela_reg, 'REG')  # <-- Esta linha vai dar erro no import se não for comentada
+> exibe_tabela(tabela_reg, 'REGIAO')  # <-- Esta linha vai dar erro no import se não for comentada
 > ```
 > 
 > Basta colocar uma cerquilha `#` antes dela (ou apagá-la) para que o Python não tente executá-la durante o `import`:
 > ```python
 > # Como usar no notebook:
-> # formata_tabela(tabela_reg, 'REG')
+> # formata_tabela(tabela_reg, 'REGIAO')
 > ```
 
 Feito esse pequeno ajuste no arquivo, ao rodar a célula no notebook a tabela sairá perfeitamente alinhada!
@@ -4275,11 +4317,11 @@ Para cada coluna `c` da tabela:
 
 ### Exemplo Prático com os Nossos Dados:
 
-| Coluna | Maior Dado (`.max()`) | Tamanho do Título (`len(c)`) | `max(Dado, Título)` | `+ 2` (Margem) | Largura Final (`w[c]`) |
-| :--- | :--- | :---: | :---: | :---: | :---: |
-| **`REG`** | `"Centro-Oeste"` (12) | `"REG"` (3) | 12 | + 2 | **14 caracteres** |
-| **`N_IFS`** | `"11"` (2) | `"N_IFS"` (5) | 5 | + 2 | **7 caracteres** |
-| **`DESVIO_PADRAO`**| `"17.37"` (5) | `"DESVIO_PADRAO"` (13) | 13 | + 2 | **15 caracteres** |
+| Coluna              | Maior Dado (`.max()`) | Tamanho do Título (`len(c)`) | `max(Dado, Título)` | `+ 2` (Margem) | Largura Final (`w[c]`) |
+| :------------------ | :-------------------- | :--------------------------: | :-----------------: | :------------: | :--------------------: |
+| **`REG`**           | `"Centro-Oeste"` (12) |         `"REG"` (3)          |         12          |      + 2       |   **14 caracteres**    |
+| **`N_IFS`**         | `"11"` (2)            |        `"N_IFS"` (5)         |          5          |      + 2       |    **7 caracteres**    |
+| **`DESVIO_PADRAO`** | `"17.37"` (5)         |    `"DESVIO_PADRAO"` (13)    |         13          |      + 2       |   **15 caracteres**    |
 
 ---
 
@@ -4331,7 +4373,7 @@ O código calcula a largura **apenas olhando para os dados da própria coluna `c
 ```python
 # Cada coluna com seu próprio tamanho personalizado:
 w = {
-    'REG': 14,             # Largura adaptada para os nomes das regiões
+    'REGIAO': 14,             # Largura adaptada para os nomes das regiões
     'N_IFS': 7,            # Estreita, só para números pequenos
     'MEDIA': 7,            # Estreita
     'DESVIO_PADRAO': 15,   # Mais larga por causa do título
@@ -4512,13 +4554,13 @@ Veja a tabela real dos dados:
 
 ### 📊 Tabela Consolidada de Pressupostos da ANOVA (Todos os Fatores)
 
-| Fator Analisado | Shapiro-Wilk ($W$) | $p$-valor (Normalidade) | **Normal?** | Levene ($W$) | $p$-valor (Variâncias) | **Homocedástico?** |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Região Geográfica** | **0,9456** | **0,0636** | **Sim ($p \ge 0,05$)** | 2,0297 | 0,1130 | **Sim** |
-| **Cor/Raça** | 0,9123 | $< 0,0001$ | **NÃO** | 1,2901 | 0,2755 | Sim |
-| **Faixa Etária** | 0,9722 | $< 0,0001$ | **NÃO** | 2,8700 | 0,0018 | **NÃO** |
-| **Renda Familiar** | 0,9387 | $< 0,0001$ | **NÃO** | 0,7001 | 0,6239 | Sim |
-| **Sexo** | 0,8945 | $< 0,0001$ | **NÃO** | 0,0030 | 0,9563 | Sim |
+| Fator Analisado       | Shapiro-Wilk ($W$) | $p$-valor (Normalidade) |      **Normal?**       | Levene ($W$) | $p$-valor (Variâncias) | **Homocedástico?** |
+| :-------------------- | :----------------: | :---------------------: | :--------------------: | :----------: | :--------------------: | :----------------: |
+| **Região Geográfica** |     **0,9456**     |       **0,0636**        | **Sim ($p \ge 0,05$)** |    2,0297    |         0,1130         |      **Sim**       |
+| **Cor/Raça**          |       0,9123       |       $< 0,0001$        |        **NÃO**         |    1,2901    |         0,2755         |        Sim         |
+| **Faixa Etária**      |       0,9722       |       $< 0,0001$        |        **NÃO**         |    2,8700    |         0,0018         |      **NÃO**       |
+| **Renda Familiar**    |       0,9387       |       $< 0,0001$        |        **NÃO**         |    0,7001    |         0,6239         |        Sim         |
+| **Sexo**              |       0,8945       |       $< 0,0001$        |        **NÃO**         |    0,0030    |         0,9563         |        Sim         |
 
 ---
 
@@ -4547,7 +4589,7 @@ from scipy import stats
 def diagnostico_pressupostos_todos_fatores(df):
     """Gera uma tabela panorâmica de normalidade e homocedasticidade para todos os fatores."""
     fatores = [
-        ('REG', 'Região Geográfica'),
+        ('REGIAO', 'Região Geográfica'),
         ('RACA', 'Cor/Raça'),
         ('FAIXA_ETARIA', 'Faixa Etária'),
         ('RENDA', 'Renda Familiar'),
@@ -4615,7 +4657,7 @@ Como você já tem a função `prepara_dados_fator` e a `verifica_pressupostos_a
 
 ```python
 # Roda a verificação para todos os fatores usando as funções que você já tem
-fatores = ['REG', 'RACA', 'FAIXA_ETARIA', 'RENDA', 'SEXO']
+fatores = ['REGIAO', 'RACA', 'FAIXA_ETARIA', 'RENDA', 'SEXO']
 
 for col in fatores:
     df_inst, _ = prepara_dados_fator(df, col)
@@ -5025,136 +5067,266 @@ conda install -n mara-projs -c conda-forge pyarrow -y
 ### 👤 Usuário:
 
 Tudo certo?
-mara-projs) PS D:\MyProjects\IFTM\Orientacao\ECD\2025\Mara_Oliveira\Projeto4> conda install -n mara-projs -c conda-forge pyarrow -y
-3 channel Terms of Service accepted
-Retrieving notices: done
-Channels:
- - conda-forge
- - defaults
-Platform: win-64
-Collecting package metadata (repodata.json): done
-Solving environment: done
-
-## Package Plan ##
-
-  environment location: C:\Users\santu\miniconda3\envs\mara-projs
-
-  added / updated specs:
-    - pyarrow
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    aws-c-auth-0.8.0           |      h2219d47_15         100 KB  conda-forge
-    aws-c-cal-0.8.1            |       h099ea23_3          46 KB  conda-forge
-    aws-c-common-0.10.6        |       h2466b09_0         230 KB  conda-forge
-    aws-c-compression-0.3.0    |       h099ea23_5          22 KB  conda-forge
-    aws-c-event-stream-0.5.0   |      h85d8506_11          53 KB  conda-forge
-    aws-c-http-0.9.2           |       h3888f84_4         178 KB  conda-forge
-    aws-c-io-0.15.3            |       hc5a9e45_6         156 KB  conda-forge
-    aws-c-mqtt-0.11.0          |      h2c94728_12         183 KB  conda-forge
-    aws-c-s3-0.7.7             |       h6a38c86_0         107 KB  conda-forge
-    aws-c-sdkutils-0.2.1       |       h099ea23_4          54 KB  conda-forge
-    aws-checksums-0.2.2        |       h099ea23_4          90 KB  conda-forge
-    aws-crt-cpp-0.29.7         |       h0642867_7         257 KB  conda-forge
-    aws-sdk-cpp-1.11.458       |       h5f5f9c4_4         2.8 MB  conda-forge
-    c-ares-1.34.8              |       h6a83c73_2         206 KB  conda-forge
-    ca-certificates-2026.7.22  |       h4c7d964_0         129 KB  conda-forge
-    krb5-1.22.2                |       h719d79b_2         736 KB  conda-forge
-    libabseil-20240722.0       | cxx17_h4eb7d71_4         1.7 MB  conda-forge
-    libarrow-18.1.0            |   hfb2d516_4_cpu         5.0 MB  conda-forge
-    libarrow-acero-18.1.0      |   hb6457b2_4_cpu         436 KB  conda-forge
-    libarrow-dataset-18.1.0    |   hb6457b2_4_cpu         423 KB  conda-forge
-    libarrow-substrait-18.1.0  |   h30d554c_4_cpu         356 KB  conda-forge
-    libbrotlicommon-1.1.0      |       hfd05255_4          70 KB  conda-forge
-    libbrotlidec-1.1.0         |       hfd05255_4          33 KB  conda-forge
-    libbrotlienc-1.1.0         |       hfd05255_4         240 KB  conda-forge
-    libcrc32c-1.1.2            |       h0e60522_0          25 KB  conda-forge
-    libcurl-8.22.0             |       hdb0ef4a_0         404 KB  conda-forge
-    libevent-2.1.12            |       hc903f1e_2         404 KB  conda-forge
-    libgoogle-cloud-2.31.0     |       h07d40e7_0          14 KB  conda-forge
-    libgoogle-cloud-storage-2.31.0|       he5eb982_0          14 KB  conda-forge
-    libgrpc-1.67.1             |       h7aa3b8a_0        16.4 MB  conda-forge
-    libparquet-18.1.0          |   he61daf8_4_cpu         792 KB  conda-forge
-    libprotobuf-5.28.2         |       hcaed137_0         5.8 MB  conda-forge
-    libpsl-0.23.1              |       h9b16d47_1          72 KB  conda-forge
-    libre2-11-2024.07.02       |       h4eb7d71_2         255 KB  conda-forge
-    libssh2-1.11.1             |       h734d217_1         288 KB  conda-forge
-    libthrift-0.21.0           |       hbe90ef8_0         619 KB  conda-forge
-    libutf8proc-2.9.0          |       h2466b09_1          82 KB  conda-forge
-    orc-2.0.3                  |       h34659fe_0         876 KB  conda-forge
-    pyarrow-18.1.0             |  py311h1ea47a8_0          25 KB  conda-forge
-    pyarrow-core-18.1.0        |py311hdea38fa_0_cpu         3.3 MB  conda-forge
-    python_abi-3.11            |          2_cp311           5 KB  conda-forge
-    re2-2024.07.02             |       haf4117d_2         210 KB  conda-forge
-    snappy-1.2.2               |       h7fa0ca8_2          66 KB  conda-forge
-    ------------------------------------------------------------
-                                           Total:        43.1 MB
-
-The following NEW packages will be INSTALLED:
-
-  aws-c-auth         conda-forge/win-64::aws-c-auth-0.8.0-h2219d47_15
-  aws-c-cal          conda-forge/win-64::aws-c-cal-0.8.1-h099ea23_3
-  aws-c-common       conda-forge/win-64::aws-c-common-0.10.6-h2466b09_0
-  aws-c-compression  conda-forge/win-64::aws-c-compression-0.3.0-h099ea23_5
-  aws-c-event-stream conda-forge/win-64::aws-c-event-stream-0.5.0-h85d8506_11
-  aws-c-http         conda-forge/win-64::aws-c-http-0.9.2-h3888f84_4
-  aws-c-io           conda-forge/win-64::aws-c-io-0.15.3-hc5a9e45_6
-  aws-c-mqtt         conda-forge/win-64::aws-c-mqtt-0.11.0-h2c94728_12
-  aws-c-s3           conda-forge/win-64::aws-c-s3-0.7.7-h6a38c86_0
-  aws-c-sdkutils     conda-forge/win-64::aws-c-sdkutils-0.2.1-h099ea23_4
-  aws-checksums      conda-forge/win-64::aws-checksums-0.2.2-h099ea23_4
-  aws-crt-cpp        conda-forge/win-64::aws-crt-cpp-0.29.7-h0642867_7
-  aws-sdk-cpp        conda-forge/win-64::aws-sdk-cpp-1.11.458-h5f5f9c4_4
-  c-ares             conda-forge/win-64::c-ares-1.34.8-h6a83c73_2
-  krb5               conda-forge/win-64::krb5-1.22.2-h719d79b_2
-  libabseil          conda-forge/win-64::libabseil-20240722.0-cxx17_h4eb7d71_4
-  libarrow           conda-forge/win-64::libarrow-18.1.0-hfb2d516_4_cpu
-  libarrow-acero     conda-forge/win-64::libarrow-acero-18.1.0-hb6457b2_4_cpu
-  libarrow-dataset   conda-forge/win-64::libarrow-dataset-18.1.0-hb6457b2_4_cpu
-  libarrow-substrait conda-forge/win-64::libarrow-substrait-18.1.0-h30d554c_4_cpu
-  libbrotlicommon    conda-forge/win-64::libbrotlicommon-1.1.0-hfd05255_4
-  libbrotlidec       conda-forge/win-64::libbrotlidec-1.1.0-hfd05255_4
-  libbrotlienc       conda-forge/win-64::libbrotlienc-1.1.0-hfd05255_4
-  libcrc32c          conda-forge/win-64::libcrc32c-1.1.2-h0e60522_0
-  libcurl            conda-forge/win-64::libcurl-8.22.0-hdb0ef4a_0
-  libevent           conda-forge/win-64::libevent-2.1.12-hc903f1e_2
-  libgoogle-cloud    conda-forge/win-64::libgoogle-cloud-2.31.0-h07d40e7_0
-  libgoogle-cloud-s~ conda-forge/win-64::libgoogle-cloud-storage-2.31.0-he5eb982_0
-  libgrpc            conda-forge/win-64::libgrpc-1.67.1-h7aa3b8a_0
-  libparquet         conda-forge/win-64::libparquet-18.1.0-he61daf8_4_cpu
-  libprotobuf        conda-forge/win-64::libprotobuf-5.28.2-hcaed137_0
-  libpsl             conda-forge/win-64::libpsl-0.23.1-h9b16d47_1
-  libre2-11          conda-forge/win-64::libre2-11-2024.07.02-h4eb7d71_2
-  libssh2            conda-forge/win-64::libssh2-1.11.1-h734d217_1
-  libthrift          conda-forge/win-64::libthrift-0.21.0-hbe90ef8_0
-  libutf8proc        conda-forge/win-64::libutf8proc-2.9.0-h2466b09_1
-  orc                conda-forge/win-64::orc-2.0.3-h34659fe_0
-  pyarrow            conda-forge/win-64::pyarrow-18.1.0-py311h1ea47a8_0
-  pyarrow-core       conda-forge/win-64::pyarrow-core-18.1.0-py311hdea38fa_0_cpu
-  python_abi         conda-forge/win-64::python_abi-3.11-2_cp311
-  re2                conda-forge/win-64::re2-2024.07.02-haf4117d_2
-  snappy             conda-forge/win-64::snappy-1.2.2-h7fa0ca8_2
-
-The following packages will be UPDATED:
-
-  ca-certificates    pkgs/main/win-64::ca-certificates-202~ --> conda-forge/noarch::ca-certificates-2026.7.22-h4c7d964_0
-  openssl               pkgs/main::openssl-3.5.7-hbb43b14_0 --> conda-forge::openssl-3.6.5-hf411b9b_0
-
-
-
-Downloading and Extracting Packages:
-
-Verifying transaction: done
-Executing transaction: done
-
-Channel "defaults" has the following notices:
-  [warning] -- Wed Sep 30 00:00:00 2026
-  Anaconda will stop building new Python 3.10 packages on the main channel after October 31, 2026. Existing Python 3.10 packages will stay available but will no longer get new builds or security fixes. We recommend upgrading to Python 3.11 or later. Details: https://www.anaconda.com/docs/reference/policies-practices/python-version-support?utm_source=channel_notices
-
-  [info] -- Thu Aug  6 00:00:00 2026
+mara-projs) PS D:\MyProjects\IFTM\Orientacao\ECD\2025\Mara_Oliveira\Projeto4> conda install -n mara-projs -c conda-forge pyarrow -y
+
+3 channel Terms of Service accepted
+
+Retrieving notices: done
+
+Channels:
+
+ - conda-forge
+
+ - defaults
+
+Platform: win-64
+
+Collecting package metadata (repodata.json): done
+
+Solving environment: done
+
+
+
+## Package Plan ##
+
+
+
+  environment location: C:\Users\santu\miniconda3\envs\mara-projs
+
+
+
+  added / updated specs:
+
+    - pyarrow
+
+
+
+
+
+The following packages will be downloaded:
+
+
+
+    package                    |            build
+
+    ---------------------------|-----------------
+
+    aws-c-auth-0.8.0           |      h2219d47_15         100 KB  conda-forge
+
+    aws-c-cal-0.8.1            |       h099ea23_3          46 KB  conda-forge
+
+    aws-c-common-0.10.6        |       h2466b09_0         230 KB  conda-forge
+
+    aws-c-compression-0.3.0    |       h099ea23_5          22 KB  conda-forge
+
+    aws-c-event-stream-0.5.0   |      h85d8506_11          53 KB  conda-forge
+
+    aws-c-http-0.9.2           |       h3888f84_4         178 KB  conda-forge
+
+    aws-c-io-0.15.3            |       hc5a9e45_6         156 KB  conda-forge
+
+    aws-c-mqtt-0.11.0          |      h2c94728_12         183 KB  conda-forge
+
+    aws-c-s3-0.7.7             |       h6a38c86_0         107 KB  conda-forge
+
+    aws-c-sdkutils-0.2.1       |       h099ea23_4          54 KB  conda-forge
+
+    aws-checksums-0.2.2        |       h099ea23_4          90 KB  conda-forge
+
+    aws-crt-cpp-0.29.7         |       h0642867_7         257 KB  conda-forge
+
+    aws-sdk-cpp-1.11.458       |       h5f5f9c4_4         2.8 MB  conda-forge
+
+    c-ares-1.34.8              |       h6a83c73_2         206 KB  conda-forge
+
+    ca-certificates-2026.7.22  |       h4c7d964_0         129 KB  conda-forge
+
+    krb5-1.22.2                |       h719d79b_2         736 KB  conda-forge
+
+    libabseil-20240722.0       | cxx17_h4eb7d71_4         1.7 MB  conda-forge
+
+    libarrow-18.1.0            |   hfb2d516_4_cpu         5.0 MB  conda-forge
+
+    libarrow-acero-18.1.0      |   hb6457b2_4_cpu         436 KB  conda-forge
+
+    libarrow-dataset-18.1.0    |   hb6457b2_4_cpu         423 KB  conda-forge
+
+    libarrow-substrait-18.1.0  |   h30d554c_4_cpu         356 KB  conda-forge
+
+    libbrotlicommon-1.1.0      |       hfd05255_4          70 KB  conda-forge
+
+    libbrotlidec-1.1.0         |       hfd05255_4          33 KB  conda-forge
+
+    libbrotlienc-1.1.0         |       hfd05255_4         240 KB  conda-forge
+
+    libcrc32c-1.1.2            |       h0e60522_0          25 KB  conda-forge
+
+    libcurl-8.22.0             |       hdb0ef4a_0         404 KB  conda-forge
+
+    libevent-2.1.12            |       hc903f1e_2         404 KB  conda-forge
+
+    libgoogle-cloud-2.31.0     |       h07d40e7_0          14 KB  conda-forge
+
+    libgoogle-cloud-storage-2.31.0|       he5eb982_0          14 KB  conda-forge
+
+    libgrpc-1.67.1             |       h7aa3b8a_0        16.4 MB  conda-forge
+
+    libparquet-18.1.0          |   he61daf8_4_cpu         792 KB  conda-forge
+
+    libprotobuf-5.28.2         |       hcaed137_0         5.8 MB  conda-forge
+
+    libpsl-0.23.1              |       h9b16d47_1          72 KB  conda-forge
+
+    libre2-11-2024.07.02       |       h4eb7d71_2         255 KB  conda-forge
+
+    libssh2-1.11.1             |       h734d217_1         288 KB  conda-forge
+
+    libthrift-0.21.0           |       hbe90ef8_0         619 KB  conda-forge
+
+    libutf8proc-2.9.0          |       h2466b09_1          82 KB  conda-forge
+
+    orc-2.0.3                  |       h34659fe_0         876 KB  conda-forge
+
+    pyarrow-18.1.0             |  py311h1ea47a8_0          25 KB  conda-forge
+
+    pyarrow-core-18.1.0        |py311hdea38fa_0_cpu         3.3 MB  conda-forge
+
+    python_abi-3.11            |          2_cp311           5 KB  conda-forge
+
+    re2-2024.07.02             |       haf4117d_2         210 KB  conda-forge
+
+    snappy-1.2.2               |       h7fa0ca8_2          66 KB  conda-forge
+
+    ------------------------------------------------------------
+
+                                           Total:        43.1 MB
+
+
+
+The following NEW packages will be INSTALLED:
+
+
+
+  aws-c-auth         conda-forge/win-64::aws-c-auth-0.8.0-h2219d47_15
+
+  aws-c-cal          conda-forge/win-64::aws-c-cal-0.8.1-h099ea23_3
+
+  aws-c-common       conda-forge/win-64::aws-c-common-0.10.6-h2466b09_0
+
+  aws-c-compression  conda-forge/win-64::aws-c-compression-0.3.0-h099ea23_5
+
+  aws-c-event-stream conda-forge/win-64::aws-c-event-stream-0.5.0-h85d8506_11
+
+  aws-c-http         conda-forge/win-64::aws-c-http-0.9.2-h3888f84_4
+
+  aws-c-io           conda-forge/win-64::aws-c-io-0.15.3-hc5a9e45_6
+
+  aws-c-mqtt         conda-forge/win-64::aws-c-mqtt-0.11.0-h2c94728_12
+
+  aws-c-s3           conda-forge/win-64::aws-c-s3-0.7.7-h6a38c86_0
+
+  aws-c-sdkutils     conda-forge/win-64::aws-c-sdkutils-0.2.1-h099ea23_4
+
+  aws-checksums      conda-forge/win-64::aws-checksums-0.2.2-h099ea23_4
+
+  aws-crt-cpp        conda-forge/win-64::aws-crt-cpp-0.29.7-h0642867_7
+
+  aws-sdk-cpp        conda-forge/win-64::aws-sdk-cpp-1.11.458-h5f5f9c4_4
+
+  c-ares             conda-forge/win-64::c-ares-1.34.8-h6a83c73_2
+
+  krb5               conda-forge/win-64::krb5-1.22.2-h719d79b_2
+
+  libabseil          conda-forge/win-64::libabseil-20240722.0-cxx17_h4eb7d71_4
+
+  libarrow           conda-forge/win-64::libarrow-18.1.0-hfb2d516_4_cpu
+
+  libarrow-acero     conda-forge/win-64::libarrow-acero-18.1.0-hb6457b2_4_cpu
+
+  libarrow-dataset   conda-forge/win-64::libarrow-dataset-18.1.0-hb6457b2_4_cpu
+
+  libarrow-substrait conda-forge/win-64::libarrow-substrait-18.1.0-h30d554c_4_cpu
+
+  libbrotlicommon    conda-forge/win-64::libbrotlicommon-1.1.0-hfd05255_4
+
+  libbrotlidec       conda-forge/win-64::libbrotlidec-1.1.0-hfd05255_4
+
+  libbrotlienc       conda-forge/win-64::libbrotlienc-1.1.0-hfd05255_4
+
+  libcrc32c          conda-forge/win-64::libcrc32c-1.1.2-h0e60522_0
+
+  libcurl            conda-forge/win-64::libcurl-8.22.0-hdb0ef4a_0
+
+  libevent           conda-forge/win-64::libevent-2.1.12-hc903f1e_2
+
+  libgoogle-cloud    conda-forge/win-64::libgoogle-cloud-2.31.0-h07d40e7_0
+
+  libgoogle-cloud-s~ conda-forge/win-64::libgoogle-cloud-storage-2.31.0-he5eb982_0
+
+  libgrpc            conda-forge/win-64::libgrpc-1.67.1-h7aa3b8a_0
+
+  libparquet         conda-forge/win-64::libparquet-18.1.0-he61daf8_4_cpu
+
+  libprotobuf        conda-forge/win-64::libprotobuf-5.28.2-hcaed137_0
+
+  libpsl             conda-forge/win-64::libpsl-0.23.1-h9b16d47_1
+
+  libre2-11          conda-forge/win-64::libre2-11-2024.07.02-h4eb7d71_2
+
+  libssh2            conda-forge/win-64::libssh2-1.11.1-h734d217_1
+
+  libthrift          conda-forge/win-64::libthrift-0.21.0-hbe90ef8_0
+
+  libutf8proc        conda-forge/win-64::libutf8proc-2.9.0-h2466b09_1
+
+  orc                conda-forge/win-64::orc-2.0.3-h34659fe_0
+
+  pyarrow            conda-forge/win-64::pyarrow-18.1.0-py311h1ea47a8_0
+
+  pyarrow-core       conda-forge/win-64::pyarrow-core-18.1.0-py311hdea38fa_0_cpu
+
+  python_abi         conda-forge/win-64::python_abi-3.11-2_cp311
+
+  re2                conda-forge/win-64::re2-2024.07.02-haf4117d_2
+
+  snappy             conda-forge/win-64::snappy-1.2.2-h7fa0ca8_2
+
+
+
+The following packages will be UPDATED:
+
+
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-202~ --> conda-forge/noarch::ca-certificates-2026.7.22-h4c7d964_0
+
+  openssl               pkgs/main::openssl-3.5.7-hbb43b14_0 --> conda-forge::openssl-3.6.5-hf411b9b_0
+
+
+
+
+
+
+
+Downloading and Extracting Packages:
+
+
+
+Verifying transaction: done
+
+Executing transaction: done
+
+
+
+Channel "defaults" has the following notices:
+
+  [warning] -- Wed Sep 30 00:00:00 2026
+
+  Anaconda will stop building new Python 3.10 packages on the main channel after October 31, 2026. Existing Python 3.10 packages will stay available but will no longer get new builds or security fixes. We recommend upgrading to Python 3.11 or later. Details: https://www.anaconda.com/docs/reference/policies-practices/python-version-support?utm_source=channel_notices
+
+
+
+  [info] -- Thu Aug  6 00:00:00 2026
+
   main-x (Anaconda's new authenticated channel) is now generally available, with thousands of additional packages from our secure supply chain. Get started at: https://anaconda.com/docs/getting-started/main-x?utm_source=channel_notices
 
 Pode atualizar o requirement.txt e o enviroment.yml?
@@ -5175,9 +5347,9 @@ Já atualizei tanto o [environment.yml](file:///d:/MyProjects/IFTM/Orientacao/EC
 
 Eis o porquê:
 
-| Arquivo | Para quem serve | Vantagem |
-| :--- | :--- | :--- |
-| **`environment.yml`** | Usuários do **Conda / Mamba** | Define a versão do interpretador Python (3.11), canais oficiais (`conda-forge`) e pacotes do ecossistema Conda. |
+| Arquivo                | Para quem serve                                                                 | Vantagem                                                                                                                                                                         |
+| :--------------------- | :------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`environment.yml`**  | Usuários do **Conda / Mamba**                                                   | Define a versão do interpretador Python (3.11), canais oficiais (`conda-forge`) e pacotes do ecossistema Conda.                                                                  |
 | **`requirements.txt`** | Usuários do **Python padrão (`pip` / `venv`)**, Google Colab, GitHub Codespaces | É o padrão universal da comunidade Python. Qualquer pessoa ou banca avaliadora que não use Conda consegue reproduzir o projeto com um simples `pip install -r requirements.txt`. |
 
 Manter ambos sincronizados é uma das **melhores práticas de reprodutibilidade científica**, pois garante que qualquer pesquisador consiga executar o código do seu projeto independente do gerenciador que utilize.
@@ -5287,13 +5459,13 @@ Quando a normalidade falha ($p < 0,05$), a distribuição teórica $F$ perde a v
 
 ### Matriz de Decisão Metodológica (Fator a Fator)
 
-| Fator | Normalidade? | Homocedástico? | **Pode aplicar ANOVA de Fisher + Tukey HSD?** | **Qual teste DEVE ser aplicado?** | **Comparação Par a Par (Pós-teste)** |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **`REG`** (Região) | **Sim** ($p = 0,0636$) | **Sim** ($p = 0,1130$) | **SIM (Perfeito)** | **ANOVA One-Way (Paramétrica)** | **Tukey HSD** (médias) |
-| **`ETNIA`** (Raça) | **Não** ($p < 0,0001$) | **Sim** ($p = 0,2755$) | **NÃO** | **Kruskal-Wallis** (Não-paramétrico) | **Mann-Whitney** c/ ajuste de Bonferroni |
-| **`FAIXA_ETARIA`** | **Não** ($p < 0,0001$) | **Não** ($p = 0,0018$) | **NÃO** (Violação dupla) | **Kruskal-Wallis** (Não-paramétrico) | **Mann-Whitney** c/ ajuste de Bonferroni |
-| **`RENDA`** | **Não** ($p < 0,0001$) | **Sim** ($p = 0,6239$) | **NÃO** | **Kruskal-Wallis** (Não-paramétrico) | **Mann-Whitney** c/ ajuste de Bonferroni |
-| **`SEXO`** | **Não** ($p < 0,0001$) | **Sim** ($p = 0,9563$) | **NÃO** | **Mann-Whitney** ou **Kruskal-Wallis** | *Desnecessário* (são só 2 grupos) |
+| Fator              |      Normalidade?      |     Homocedástico?     | **Pode aplicar ANOVA de Fisher + Tukey HSD?** |   **Qual teste DEVE ser aplicado?**    |   **Comparação Par a Par (Pós-teste)**   |
+| :----------------- | :--------------------: | :--------------------: | :-------------------------------------------: | :------------------------------------: | :--------------------------------------: |
+| **`REG`** (Região) | **Sim** ($p = 0,0636$) | **Sim** ($p = 0,1130$) |              **SIM (Perfeito)**               |    **ANOVA One-Way (Paramétrica)**     |          **Tukey HSD** (médias)          |
+| **`ETNIA`** (Raça) | **Não** ($p < 0,0001$) | **Sim** ($p = 0,2755$) |                    **NÃO**                    |  **Kruskal-Wallis** (Não-paramétrico)  | **Mann-Whitney** c/ ajuste de Bonferroni |
+| **`FAIXA_ETARIA`** | **Não** ($p < 0,0001$) | **Não** ($p = 0,0018$) |           **NÃO** (Violação dupla)            |  **Kruskal-Wallis** (Não-paramétrico)  | **Mann-Whitney** c/ ajuste de Bonferroni |
+| **`RENDA`**        | **Não** ($p < 0,0001$) | **Sim** ($p = 0,6239$) |                    **NÃO**                    |  **Kruskal-Wallis** (Não-paramétrico)  | **Mann-Whitney** c/ ajuste de Bonferroni |
+| **`SEXO`**         | **Não** ($p < 0,0001$) | **Sim** ($p = 0,9563$) |                    **NÃO**                    | **Mann-Whitney** ou **Kruskal-Wallis** |    *Desnecessário* (são só 2 grupos)     |
 
 ---
 
@@ -5372,13 +5544,13 @@ Para saber exatamente quais categorias diferem entre si, a literatura científic
 
 ### Como fica a estrutura metodológica completa no trabalho da Mara:
 
-| Fator | Teste Global | Pós-teste Par a Par | O que compara? |
-| :--- | :--- | :--- | :--- |
-| **`REG`** (Normal) | **ANOVA One-Way (Fisher)** | **Tukey HSD** | Compara as **médias** das taxas de conclusão |
-| **`ETNIA`** (Não-normal) | **Kruskal-Wallis** | **Mann-Whitney (c/ Bonferroni)** | Compara as **medianas/postos** das taxas |
-| **`FAIXA_ETARIA`** (Não-normal) | **Kruskal-Wallis** | **Mann-Whitney (c/ Bonferroni)** | Compara as **medianas/postos** das taxas |
-| **`RENDA`** (Não-normal) | **Kruskal-Wallis** | **Mann-Whitney (c/ Bonferroni)** | Compara as **medianas/postos** das taxas |
-| **`SEXO`** (Não-normal) | **Mann-Whitney / Kruskal** | *Não precisa* | Já compara diretamente os 2 únicos grupos |
+| Fator                           | Teste Global               | Pós-teste Par a Par              | O que compara?                               |
+| :------------------------------ | :------------------------- | :------------------------------- | :------------------------------------------- |
+| **`REG`** (Normal)              | **ANOVA One-Way (Fisher)** | **Tukey HSD**                    | Compara as **médias** das taxas de conclusão |
+| **`ETNIA`** (Não-normal)        | **Kruskal-Wallis**         | **Mann-Whitney (c/ Bonferroni)** | Compara as **medianas/postos** das taxas     |
+| **`FAIXA_ETARIA`** (Não-normal) | **Kruskal-Wallis**         | **Mann-Whitney (c/ Bonferroni)** | Compara as **medianas/postos** das taxas     |
+| **`RENDA`** (Não-normal)        | **Kruskal-Wallis**         | **Mann-Whitney (c/ Bonferroni)** | Compara as **medianas/postos** das taxas     |
+| **`SEXO`** (Não-normal)         | **Mann-Whitney / Kruskal** | *Não precisa*                    | Já compara diretamente os 2 únicos grupos    |
 
 ---
 
@@ -5544,12 +5716,12 @@ A diferença está na **Unidade Amostral** (ou seja: *"quem é cada linha da sua
 * **Quem é a unidade de observação?** O **Estudante individual** (são as centenas de milhares de alunos reais na base: $N = 135.428$ alunos válidos).
 * **Como o teste é montado?** Ele não trabalha com a média dos IFs. Ele soma todas as pessoas reais da Rede e monta uma **Tabela de Contingência 2 $\times$ K**:
 
-| Categoria | Alunos que Concluíram | Alunos que NÃO Concluíram (Evasão/Retenção) | Total Real de Alunos |
-| :--- | :---: | :---: | :---: |
-| **Branca** | 18.420 | 14.110 | 32.530 |
-| **Preta** | 4.810 | 7.920 | 12.730 |
-| **Parda** | 22.150 | 28.340 | 50.490 |
-| **...** | ... | ... | ... |
+| Categoria  | Alunos que Concluíram | Alunos que NÃO Concluíram (Evasão/Retenção) | Total Real de Alunos |
+| :--------- | :-------------------: | :-----------------------------------------: | :------------------: |
+| **Branca** |        18.420         |                   14.110                    |        32.530        |
+| **Preta**  |         4.810         |                    7.920                    |        12.730        |
+| **Parda**  |        22.150         |                   28.340                    |        50.490        |
+| **...**    |          ...          |                     ...                     |         ...          |
 
 * **A pergunta que o Qui-Quadrado responde:**
   > *"A probabilidade de um **estudante** ter sucesso (concluir o curso) é independente ou está estatisticamente associada à sua cor, renda, gênero ou idade?"*
@@ -5581,18 +5753,30 @@ Essa abordagem é chamada de **triangulação multinível**:
 
 Essa descrição está correta?
 
-As seguintes etapas serão seguidas para todos os fatores:
-
-1. Preparação da base de dados e geração da tabela com os dados da Análise Estatística Descritiva
-   
-   Nesta etapa, é realizado o agrupamento da taxa real de cada Instituto Federal e mostra os resultados em uma tabela comparando a Média Simples dos IFs com a Taxa Ponderada dos Alunos.
-   
-2. Teste do Qui-quadrado
-   
-    Neste teste, cada estudante possui o mesmo peso na análise, tendo a unidade de origem dele 5 ou 50 mil estudantes. O que se busca responder é se a probabilidade de conclusão do curso é estatisticamente associada ou não ao fator.
-
-3. Análise de Variância (ANOVA One-Way) ou o Teste de Kruskal-Wallis (Teste $H$ de Kruskal-Wallis)
-
+As seguintes etapas serão seguidas para todos os fatores:
+
+
+
+1. Preparação da base de dados e geração da tabela com os dados da Análise Estatística Descritiva
+
+   
+
+   Nesta etapa, é realizado o agrupamento da taxa real de cada Instituto Federal e mostra os resultados em uma tabela comparando a Média Simples dos IFs com a Taxa Ponderada dos Alunos.
+
+   
+
+2. Teste do Qui-quadrado
+
+   
+
+    Neste teste, cada estudante possui o mesmo peso na análise, tendo a unidade de origem dele 5 ou 50 mil estudantes. O que se busca responder é se a probabilidade de conclusão do curso é estatisticamente associada ou não ao fator.
+
+
+
+3. Análise de Variância (ANOVA One-Way) ou o Teste de Kruskal-Wallis (Teste $H$ de Kruskal-Wallis)
+
+
+
    A opção de usar um ou outro método de análise irá depender do atendimento dos pressupostos da normalidade. Caso ambos pressupostos sejam atendidos, é realizado a Análise de Variânci, caso algum deles ou ambos não sejam, é realizado o Teste de Kruskal-Wallis. Não obstante,ambos métodos também possuem a capacidade de avaliar se a influência dos fatores sobre a taxa de conclusão é estatísticamente significativa. A diferençca destes dois métodos com o anterior é base de avaliação, Enquanto o anterior a base é o estudante, nesses dois a bases são valores médios das unidades de origem. Sendo assim, a taxa de conclusão média de uma unidade pode contribuir para o aumento ou redução da taxa de conclusão média por fator independente do número de estudantes que possua.
 
 
@@ -5642,12 +5826,18 @@ Aqui está o seu texto com a redação acadêmica polida e as correções aplica
 
 O que está errado aqui?
 
-
-    if p_shapiro > 0.05 & p_levene > 0.05:
-        # Análise de Variância (ANOVA One-Way)
-        f_reg, p_anova_reg = executa_anova_oneway(df_inst, fator)
-    else:
-        # Comparações Múltiplas Par a Par (Teste de Tukey HSD)
+
+
+    if p_shapiro > 0.05 & p_levene > 0.05:
+
+        # Análise de Variância (ANOVA One-Way)
+
+        f_reg, p_anova_reg = executa_anova_oneway(df_inst, fator)
+
+    else:
+
+        # Comparações Múltiplas Par a Par (Teste de Tukey HSD)
+
         df_tukey_reg = executar_tukey_hsd(df_inst, fator)
 
 
@@ -5726,9 +5916,12 @@ Com essa estrutura:
 
 Onde está o erro?
 
-
-    if p_anova > 0.05:
-        df_tukey = executar_tukey_hsd(df_inst, fator)
+
+
+    if p_anova > 0.05:
+
+        df_tukey = executar_tukey_hsd(df_inst, fator)
+
         formata_tabela(df_tukey, fator)
 
 
@@ -5756,7 +5949,7 @@ if p_anova > 0.05:
 ### 2. O nome da coluna em `formata_tabela(df_tukey, fator)` — Erro de Coluna
 
 A sua função `formata_tabela(tabela, col_texto)` espera o nome da coluna de texto que fica alinhada à esquerda.
-* Na tabela descritiva original, essa coluna se chamava `fator` (ex.: `'REG'`, `'RACA'`).
+* Na tabela descritiva original, essa coluna se chamava `fator` (ex.: `'REGIAO'`, `'RACA'`).
 * Mas no `df_tukey` gerado pelo teste de Tukey, as colunas são:
   `['Comparação', 'Diferença das Médias (%)', 'p-valor', 'Significante?']`
 * Ou seja, a primeira coluna chama-se **`'Comparação'`**, e não `fator`.
@@ -5785,19 +5978,32 @@ else:
 
 E no teste kruskal?
 
-    if p_shapiro > 0.05 and p_levene > 0.05:
-        # Análise de Variância (ANOVA One-Way)
-        f_reg, p_anova = executa_anova_oneway(df_inst, fator)
-        
-        if p_anova < 0.05:
-            df_tukey = executar_tukey_hsd(df_inst, fator)
-            formata_tabela(df_tukey, 'Comparação')
-    else:
-        # Teste de Kruskal-Wallis (Nível Institucional)
-        h_stat, p_kruskal = executar_kruskal_wallis(df_inst, fator)
-
-        if p_kruskal < 0.05:
-            df_tukey = executar_tukey_hsd(df_inst, fator)
+    if p_shapiro > 0.05 and p_levene > 0.05:
+
+        # Análise de Variância (ANOVA One-Way)
+
+        f_reg, p_anova = executa_anova_oneway(df_inst, fator)
+
+        
+
+        if p_anova < 0.05:
+
+            df_tukey = executar_tukey_hsd(df_inst, fator)
+
+            formata_tabela(df_tukey, 'Comparação')
+
+    else:
+
+        # Teste de Kruskal-Wallis (Nível Institucional)
+
+        h_stat, p_kruskal = executar_kruskal_wallis(df_inst, fator)
+
+
+
+        if p_kruskal < 0.05:
+
+            df_tukey = executar_tukey_hsd(df_inst, fator)
+
             formata_tabela(df_tukey, fator)
 
 
@@ -5882,7 +6088,8 @@ Esse bloco atende perfeitamente a todos os fatores:
 
 E aqui?
 
-    # Teste Qui-Quadrado de Independência (Nível Discente)
+    # Teste Qui-Quadrado de Independência (Nível Discente)
+
     chi2_reg, p_chi2_reg = executar_teste_quiquadrado(df, fator)
 
 

@@ -5,7 +5,7 @@ def executa_tukey_hsd(df_inst, coluna_fator):
 
     """Executa o teste de Tukey HSD e imprime os resultados."""
 
-    grupos_dict = {cat: g['TAXA_CONCLUSAO'].values for cat, g in df_inst.groupby(coluna_fator)}
+    grupos_dict = {cat: g['TAXA_MEDIA_IF'].values for cat, g in df_inst.groupby(coluna_fator)}
     nomes = list(grupos_dict.keys())
     valores = [grupos_dict[k] for k in nomes]
     res_tukey = stats.tukey_hsd(*valores)

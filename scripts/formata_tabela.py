@@ -26,6 +26,7 @@ def formata_tabela(tabela, col_texto):
     
     # Cabeçalho
     header = f"{cols[0]:<{w[cols[0]]}}" + "".join(f"{c:>{w[c]}}" for c in cols[1:])
+    print("-" * len(header))
     print(header)
     print("-" * len(header))
     
@@ -37,3 +38,4 @@ def formata_tabela(tabela, col_texto):
             for c in cols[1:]
         )
         print(linha)
+    print("-" * len(header))

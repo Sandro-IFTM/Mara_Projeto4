@@ -12,7 +12,7 @@ def executa_posthoc_mannwhitney(df_inst, coluna_fator):
     Parâmetros:
     -----------
     df_inst : pd.DataFrame
-        DataFrame agregado por instituição contendo a coluna 'TAXA_CONCLUSAO' e o fator.
+        DataFrame agregado por instituição contendo a coluna 'TAXA_MEDIA_IF' e o fator.
     coluna_fator : str
         Nome da coluna categórica (ex.: 'RACA', 'FAIXA_ETARIA', 'RENDA').
         
@@ -22,7 +22,7 @@ def executa_posthoc_mannwhitney(df_inst, coluna_fator):
         Tabela com pares comparados, diferença de medianas, estatística U, p-valores e significância.
     """
     # 1. Separação dos valores por grupo
-    grupos_dict = {cat: g['TAXA_CONCLUSAO'].values for cat, g in df_inst.groupby(coluna_fator)}
+    grupos_dict = {cat: g['TAXA_MEDIA_IF'].values for cat, g in df_inst.groupby(coluna_fator)}
     nomes = list(grupos_dict.keys())
     
     # 2. Gera todos os pares únicos
