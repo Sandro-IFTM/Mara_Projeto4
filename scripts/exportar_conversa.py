@@ -23,7 +23,7 @@ from datetime import datetime
 
 # Diretório padrão onde o Antigravity IDE armazena os logs
 DEFAULT_BRAIN_DIR = Path.home() / ".gemini" / "antigravity-ide" / "brain"
-DEFAULT_OUTPUT_FILE = Path("../Docs") / "Historico_Conversa_G5.md"
+DEFAULT_OUTPUT_FILE = Path("../Docs") / "Historico_Conversa_N1510.md"
 
 
 def encontrar_conversa_mais_recente(brain_dir: Path) -> Path:
