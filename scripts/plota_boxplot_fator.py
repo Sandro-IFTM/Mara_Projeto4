@@ -23,7 +23,7 @@ def plota_boxplot_fator(df, df_inst, coluna_fator, titulo_fator, ordem=None):
     plt.figure(figsize=(11, 5.5))
     ax = plt.gca()
 
-    # 4. Desenhar o Boxplot
+ # 4. Desenhar o Boxplot
     sns.boxplot(
         data=df_inst,
         x='TAXA_CONCLUSAO',
@@ -31,6 +31,7 @@ def plota_boxplot_fator(df, df_inst, coluna_fator, titulo_fator, ordem=None):
         order=ordem,
         palette='Blues_r',
         showmeans=True,
+        showfliers=False,  # <-- ADICIONE ESTA LINHA AQUI
         meanprops={
             "marker": "o",
             "markerfacecolor": "red",
@@ -40,6 +41,7 @@ def plota_boxplot_fator(df, df_inst, coluna_fator, titulo_fator, ordem=None):
         },
         boxprops=dict(alpha=0.85)
     )
+
 
     # 5. Sobrepor a dispersão real de cada IF (Strip Plot)
     sns.stripplot(
