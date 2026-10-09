@@ -3,8 +3,8 @@
 > Documento gerado automaticamente pelo script `exportar_conversa.py`.
 > 
 > **ID da Sessão:** `6f0fc257-cde9-476e-8a94-8ebfa0de03a7`  
-> **Data de Exportação:** 08/10/2026 às 22:22:01  
-> **Total de Interações:** 16
+> **Data de Exportação:** 09/10/2026 às 03:27:45  
+> **Total de Interações:** 23
 
 ---
 
@@ -26,6 +26,13 @@
 14. [Só para melhor o foco. Quais dos arquivos na pasta SIMPOS iremos precisar?](#interacao-14) *(09/10/2026 às 00:41:25)*
 15. [Ok! Arquivos deletados.](#interacao-15) *(09/10/2026 às 00:45:34)*
 16. [Está bem.](#interacao-16) *(09/10/2026 às 01:06:56)*
+17. [ë possivel eu salvar a saída da última célula em um arquivo .md?](#interacao-17) *(09/10/2026 às 05:52:44)*
+18. [Pode postar o scrity para que eu possa rodar?](#interacao-18) *(09/10/2026 às 05:56:25)*
+19. [Excelente! Muito obrigado](#interacao-19) *(09/10/2026 às 06:07:51)*
+20. [Ao salvar esse arquivo nas fontes de um  GeminiNotebookLM, ele iria sem as figuras?](#interacao-20) *(09/10/2026 às 06:15:15)*
+21. [Excelente! Muito obrigado](#interacao-21) *(09/10/2026 às 06:17:11)*
+22. [Onde a conversa foi salva? Ou não foi?](#interacao-22) *(09/10/2026 às 06:23:02)*
+23. [Tudo certo! Muito obrigado](#interacao-23) *(09/10/2026 às 06:27:27)*
 
 ---
 
@@ -1087,5 +1094,417 @@ Excelente descanso, Sandro! O dia de hoje foi incrivelmente produtivo e estraté
 Amanhã, quando você voltar, daremos sequência imediata na redação da **Introdução**, **Material e Métodos** e **Resultados e Discussão** articulando os 3 grandes achados.
 
 Uma ótima noite de descanso e até amanhã!
+
+---
+
+<a id="interacao-17"></a>
+## Interação 17 — 09/10/2026 às 05:52:44
+
+### 👤 Usuário:
+
+ë possivel eu salvar a saída da última célula em um arquivo .md?
+
+
+### 🤖 Antigravity / Gemini:
+
+**Sim, é perfeitamente possível!** E você tem duas formas muito elegantes de fazer isso:
+
+---
+
+### Opção 1: Extrair Diretamente do Notebook já Executado (A Mais Rápida!)
+
+Como você acabou de rodar a célula e salvou o arquivo [analise_descritivas.ipynb](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks/analise_descritivas.ipynb), o Jupyter **já armazenou todas as 382 linhas de saída e todos os 15 gráficos (em PNG de alta resolução)** dentro do próprio arquivo `.ipynb`.
+
+Podemos usar um script modular que:
+1. Lê o notebook salvo;
+2. Extrai todo o texto formatado (tabelas, testes de hipóteses e conclusões);
+3. Extrai as 15 imagens dos gráficos e as salva na pasta `Docs/figuras/`;
+4. Monta um arquivo [Docs/Saida_Analise_Descritiva.md](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Docs/Saida_Analise_Descritiva.md) completo com o texto e as imagens incorporadas via `![gráfico](figuras/...)`!
+
+---
+
+### Opção 2: Gravar Diretamente dentro do Jupyter durante a Execução
+
+Se você preferir que a própria célula salve o arquivo `.md` toda vez que você a executar no notebook, basta usar a biblioteca padrão do Python com um duplicador de saída (**Tee**). 
+
+Ele imprime na tela do Jupyter normalmente e, ao mesmo tempo, escreve tudo no arquivo `.md`.
+
+#### Como ficaria na própria célula do notebook:
+
+No início da célula:
+```python
+import sys
+
+class TeeMD:
+    """Duplica a saída do print para o console e para um arquivo Markdown."""
+    def __init__(self, caminho_md):
+        self.file = open(caminho_md, 'w', encoding='utf-8')
+        self.stdout = sys.stdout
+    def write(self, data):
+        self.stdout.write(data)
+        self.file.write(data)
+    def flush(self):
+        self.stdout.flush()
+        self.file.flush()
+    def close(self):
+        self.file.close()
+
+# Inicia a captura para o arquivo
+logger = TeeMD('../Docs/Saida_Analise_Descritiva.md')
+sys.stdout = logger
+
+try:
+    fatores = ['REGIAO', 'ETNIA', 'FAIXA_ETARIA', 'RENDA', 'SEXO']
+
+    for fator in fatores:
+        # ... TODO O SEU CÓDIGO DA CÉLULA AQUI NORMALMENTE ...
+        
+finally:
+    # Restaura a saída padrão e fecha o arquivo com segurança
+    sys.stdout = logger.stdout
+    logger.close()
+    print("\n>> Saída exportada com sucesso para Docs/Saida_Analise_Descritiva.md!")
+```
+
+---
+
+### Qual você prefere agora?
+
+Se quiser a **Opção 1**, posso criar o script `scripts/exportar_saida_analise.py` e você só roda no terminal:
+```bash
+python scripts/exportar_saida_analise.py
+```
+Ele gerará o relatório `.md` em 2 segundos **sem você precisar rodar a análise toda de novo no notebook!** O que acha?
+
+---
+
+<a id="interacao-18"></a>
+## Interação 18 — 09/10/2026 às 05:56:25
+
+### 👤 Usuário:
+
+Pode postar o scrity para que eu possa rodar?
+
+
+### 🤖 Antigravity / Gemini:
+
+Pronto, Sandro! Criei e já deixei disponível na sua pasta `scripts/` o script modular [scripts/exportar_saida_analise.py](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/scripts/exportar_saida_analise.py).
+
+---
+
+### O que o script faz:
+1. Lê o notebook salvo [analise_descritivas.ipynb](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Notebooks/analise_descritivas.ipynb) (sem precisar reexecutar a análise);
+2. Extrai todas as **tabelas e estatísticas textuais** preservando o alinhamento monoespaçado;
+3. Extrai automaticamente os **15 gráficos em formato PNG** e os salva em [Docs/figuras_analise/](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Docs/figuras_analise);
+4. Gera o documento consolidado [Docs/Saida_Analise_Descritiva.md](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Docs/Saida_Analise_Descritiva.md) com o texto e as imagens incorporadas no local exato de cada etapa!
+
+---
+
+### Código do [scripts/exportar_saida_analise.py](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/scripts/exportar_saida_analise.py):
+
+```python
+# -*- coding: utf-8 -*-
+"""
+Script: exportar_saida_analise.py
+Objetivo: Extrai os resultados completos (textos, tabelas e gráficos) da última
+          execução do notebook analise_descritivas.ipynb e gera um relatório
+          consolidado em formato Markdown (Docs/Saida_Analise_Descritiva.md).
+"""
+
+import json
+import base64
+import re
+from pathlib import Path
+
+
+def exportar_saida_analise():
+    # 1. Localizar o diretório raiz do projeto
+    diretorio_script = Path(__file__).resolve().parent
+    raiz_projeto = diretorio_script.parent
+    
+    caminho_notebook = raiz_projeto / "Notebooks" / "analise_descritivas.ipynb"
+    pasta_docs = raiz_projeto / "Docs"
+    pasta_figuras = pasta_docs / "figuras_analise"
+    arquivo_saida = pasta_docs / "Saida_Analise_Descritiva.md"
+    
+    if not caminho_notebook.exists():
+        print(f"Erro: Notebook não encontrado em {caminho_notebook}")
+        return
+
+    # Garante que as pastas de destino existam
+    pasta_figuras.mkdir(parents=True, exist_ok=True)
+
+    # 2. Ler o arquivo do notebook (.ipynb é um JSON)
+    with open(caminho_notebook, "r", encoding="utf-8") as f:
+        nb = json.load(f)
+
+    # 3. Encontrar a última célula de código que contém saídas
+    celula_alvo = None
+    for celula in reversed(nb.get("cells", [])):
+        if celula.get("cell_type") == "code" and celula.get("outputs"):
+            celula_alvo = celula
+            break
+
+    if not celula_alvo:
+        print("Erro: Nenhuma célula com saídas foi encontrada no notebook.")
+        return
+
+    outputs = celula_alvo.get("outputs", [])
+    print(f">> Encontrados {len(outputs)} blocos de saída na célula.")
+
+    # 4. Estruturar o documento Markdown
+    md_linhas = [
+        "# Relatório Consolidado: Análise Estatística Descritiva e Inferencial",
+        "",
+        "> **Documento gerado automaticamente a partir das saídas do notebook:** `Notebooks/analise_descritivas.ipynb`  ",
+        "> **Controle Metodológico:** Nível Discente (Qui-Quadrado / V de Cramér) e Nível Institucional (Gauss-Markov / ANOVA / Kruskal-Wallis)",
+        "",
+        "---",
+        ""
+    ]
+
+    fator_atual = "GERAL"
+    contador_img = 0
+
+    for out in outputs:
+        tipo = out.get("output_type")
+        
+        # Processa saídas de texto / prints
+        if tipo == "stream":
+            texto = "".join(out.get("text", []))
+            
+            # Detecta se iniciou um novo fator
+            match_fator = re.search(r"-{10,}\s+([A-Z_]+)\s+-{10,}", texto)
+            if match_fator:
+                fator_atual = match_fator.group(1)
+                md_linhas.append(f"\n## FATOR: {fator_atual}\n")
+            
+            # Adiciona o texto preservando a formatação das tabelas e números
+            texto_limpo = texto.strip()
+            if texto_limpo:
+                md_linhas.append("```text")
+                md_linhas.append(texto_limpo)
+                md_linhas.append("```")
+                md_linhas.append("")
+                
+        # Processa saídas de gráficos (PNG codificados em base64)
+        elif tipo == "display_data":
+            dados = out.get("data", {})
+            if "image/png" in dados:
+                contador_img += 1
+                b64_png = dados["image/png"]
+                nome_imagem = f"grafico_{contador_img:02d}_{fator_atual}.png"
+                caminho_img = pasta_figuras / nome_imagem
+                
+                # Salva o arquivo físico PNG
+                with open(caminho_img, "wb") as f_img:
+                    f_img.write(base64.b64decode(b64_png))
+                
+                # Adiciona o link da imagem no Markdown
+                md_linhas.append(f"![{fator_atual} - Gráfico {contador_img:02d}](figuras_analise/{nome_imagem})")
+                md_linhas.append("")
+
+    # 5. Salvar o arquivo Markdown final
+    conteudo_final = "\n".join(md_linhas)
+    with open(arquivo_saida, "w", encoding="utf-8") as f_out:
+        f_out.write(conteudo_final)
+
+    print("=" * 70)
+    print(">> SUCESSO!")
+    print(f">> Relatório Markdown salvo em: {arquivo_saida}")
+    print(f">> Imagens extraídas e salvas: {contador_img} gráficos em {pasta_figuras}")
+    print("=" * 70)
+
+
+if __name__ == "__main__":
+    exportar_saida_analise()
+```
+
+---
+
+### Como Rodar no Terminal:
+
+Com o ambiente `(mara-projeto4)` ativo, basta executar no terminal:
+
+```bash
+python scripts/exportar_saida_analise.py
+```
+
+O arquivo [Docs/Saida_Analise_Descritiva.md](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Docs/Saida_Analise_Descritiva.md) já foi gerado e está pronto para você abrir no VS Code!
+
+---
+
+<a id="interacao-19"></a>
+## Interação 19 — 09/10/2026 às 06:07:51
+
+### 👤 Usuário:
+
+Excelente! Muito obrigado
+
+
+### 🤖 Antigravity / Gemini:
+
+Por nada, Sandro! É sempre um prazer.
+
+Só um **detalhe técnico rápido** sobre o ajuste que você fez na linha 22:
+
+Como você alterou a pasta de destino das imagens para a raiz do projeto (`raiz_projeto / "figuras_analise"`), e o arquivo Markdown é salvo dentro de `Docs/` (`Docs/Saida_Analise_Descritiva.md`):
+
+* Para que o visualizador de Markdown do VS Code encontre e exiba as figuras ao abrir o arquivo dentro de `Docs/`, o caminho relativo no link precisa voltar um nível (`../`).
+* Na **linha 94** do [scripts/exportar_saida_analise.py](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/scripts/exportar_saida_analise.py#L94), basta ajustar de:
+  ```python
+  md_linhas.append(f"![{fator_atual} - Gráfico {contador_img:02d}](figuras_analise/{nome_imagem})")
+  ```
+  Para:
+  ```python
+  md_linhas.append(f"![{fator_atual} - Gráfico {contador_img:02d}](../figuras_analise/{nome_imagem})")
+  ```
+
+Assim, qualquer visualizador no VS Code ou no GitHub renderizará as imagens perfeitamente!
+
+Se precisar de qualquer outro ajuste ou quando formos avançar na redação do artigo, é só chamar. Bom descanso!
+
+---
+
+<a id="interacao-20"></a>
+## Interação 20 — 09/10/2026 às 06:15:15
+
+### 👤 Usuário:
+
+Ao salvar esse arquivo nas fontes de um  GeminiNotebookLM, ele iria sem as figuras?
+
+
+### 🤖 Antigravity / Gemini:
+
+**Sim, se você fizer o upload do arquivo `.md` diretamente, ele irá sem as imagens visuais.**
+
+Isso acontece por uma razão simples:
+
+1. **Como o Markdown funciona:**  
+   O arquivo `.md` é apenas um arquivo de texto puro. As linhas `![SEXO - Gráfico 13](../figuras_analise/...)` são apenas links de texto apontando para o seu disco rígido local (`D:\...`). O NotebookLM lê o texto, mas não tem como acessar a pasta do seu computador para "puxar" os pixels da imagem.
+
+---
+
+### Mas há uma excelente notícia sobre o NotebookLM:
+
+O NotebookLM é um modelo de linguagem focado em compreensão textual e analítica. No seu arquivo `Saida_Analise_Descritiva.md`:
+* **Todos os números, tabelas, $p$-valores, testes ($\chi^2$, ANOVA, Kruskal) e conclusões já estão 100% em texto!**
+* Ou seja, mesmo sem as imagens visuais, o NotebookLM terá **acesso completo a 100% das evidências científicas** para responder perguntas, redigir seções do artigo, criar resumos e até gerar o *Audio Overview* (podcast explicativo) com precisão absoluta sobre os dados da Mara!
+
+---
+
+### E se você quiser que as figuras VÃO para o NotebookLM?
+
+Se você fizer questão de que as imagens fiquem integradas na fonte do NotebookLM, o caminho ideal é:
+
+1. **Exportar o Markdown para PDF no VS Code:**
+   * Usando a extensão **Markdown PDF** ou **Print / Export PDF** do VS Code.
+   * Ele compilará o texto com as figuras renderizadas em um único arquivo PDF.
+2. **Subir o PDF no NotebookLM:**
+   * O NotebookLM aceita arquivos PDF com imagens e texto diagramados juntos.
+
+Para a inteligência do NotebookLM entender os dados e ajudar vocês na escrita, o arquivo `.md` atual (mesmo em texto puro) **já é mais do que perfeito e completo!**
+
+---
+
+<a id="interacao-21"></a>
+## Interação 21 — 09/10/2026 às 06:17:11
+
+### 👤 Usuário:
+
+Excelente! Muito obrigado
+
+
+### 🤖 Antigravity / Gemini:
+
+Disponha sempre, Sandro! 
+
+Toda a infraestrutura analítica, os dados estatísticos exportados e os arquivos do simpósio estão perfeitamente alinhados e organizados.
+
+Quando você e a Mara quiserem dar o próximo passo na redação do artigo em [SIMPÓS/TrabalhoCompleto.md](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/SIMP%C3%93S/TrabalhoCompleto.md), estarei pronto para ajudar. Bom descanso e até breve!
+
+---
+
+<a id="interacao-22"></a>
+## Interação 22 — 09/10/2026 às 06:23:02
+
+### 👤 Usuário:
+
+Onde a conversa foi salva? Ou não foi?
+
+
+### 🤖 Antigravity / Gemini:
+
+A conversa **foi salva com sucesso**, mas foi gravada **uma pasta acima** do Projeto 4! 
+
+Veja a mensagem do seu terminal:
+```text
+[SUCESSO] Conversa exportada com sucesso para:
+   -> D:\Sandro\MyProjects\IFTM\Orientacao\ECD\2025\Mara_Oliveira\Docs\Historico_Conversa_G5.md
+```
+
+---
+
+### Por que isso aconteceu?
+
+Na **linha 26** do [scripts/exportar_conversa.py](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/scripts/exportar_conversa.py#L26), o caminho estava configurado como:
+```python
+DEFAULT_OUTPUT_FILE = Path("../Docs") / "Historico_Conversa_G5.md"
+```
+
+* Quando você roda o terminal estando dentro de `Projeto4`, o `../Docs` faz o Python **subir um nível** (para a pasta `Mara_Oliveira/`) e salvar na pasta `Docs` de lá, em vez de salvar dentro de `Projeto4/Docs/`.
+* (Esse `../Docs` só funcionava se você executasse o comando de dentro da pasta `scripts/`).
+
+---
+
+### Como resolver de forma definitiva:
+
+Podemos amarrar o caminho à raiz do projeto (exatamente como fizemos no outro script), para que ele **sempre salve em `Projeto4/Docs/`**, não importa de onde você execute o comando.
+
+#### 1. No [scripts/exportar_conversa.py](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/scripts/exportar_conversa.py#L24-L27):
+
+Altere as linhas 25-26 de:
+```python
+DEFAULT_BRAIN_DIR = Path.home() / ".gemini" / "antigravity-ide" / "brain"
+DEFAULT_OUTPUT_FILE = Path("../Docs") / "Historico_Conversa_G5.md"
+```
+Para:
+```python
+DIRETORIO_SCRIPT = Path(__file__).resolve().parent
+RAIZ_PROJETO = DIRETORIO_SCRIPT.parent
+
+DEFAULT_BRAIN_DIR = Path.home() / ".gemini" / "antigravity-ide" / "brain"
+DEFAULT_OUTPUT_FILE = RAIZ_PROJETO / "Docs" / "Historico_Conversa_G5.md"
+```
+
+---
+
+### E onde está o arquivo com a conversa de hoje agora?
+
+Ele está salvo com 80 KB e todas as 21 interações em:
+📁 `D:\Sandro\MyProjects\IFTM\Orientacao\ECD\2025\Mara_Oliveira\Docs\Historico_Conversa_G5.md`
+
+Se você quiser mover agora para dentro de `Projeto4/Docs/`, basta rodar no terminal:
+```powershell
+Move-Item -Force "..\Docs\Historico_Conversa_G5.md" "Docs\Historico_Conversa_G5.md"
+```
+
+Fazendo o ajuste no script e rodando o comando acima, tudo fica no lugar certo!
+
+---
+
+<a id="interacao-23"></a>
+## Interação 23 — 09/10/2026 às 06:27:27
+
+### 👤 Usuário:
+
+Tudo certo! Muito obrigado
+
+
+### 🤖 Antigravity / Gemini:
+
+Perfeito, Sandro! Agora o script está 100% calibrado e amarrado à raiz do projeto. O histórico com as 22 interações de hoje já está são e salvo em [Docs/Historico_Conversa_G5.md](file:///d:/Sandro/MyProjects/IFTM/Orientacao/ECD/2025/Mara_Oliveira/Projeto4/Docs/Historico_Conversa_G5.md).
+
+Missão mais do que cumprida por hoje. Tenha um excelente descanso e até a próxima sessão!
 
 ---
