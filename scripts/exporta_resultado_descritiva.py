@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 
 
-def exportar_saida_analise():
+def exporta_resultado_descritiva():
     # 1. Localizar o diretório raiz do projeto
     diretorio_script = Path(__file__).resolve().parent
     raiz_projeto = diretorio_script.parent
@@ -20,7 +20,7 @@ def exportar_saida_analise():
     caminho_notebook = raiz_projeto / "Notebooks" / "analise_descritivas.ipynb"
     pasta_docs = raiz_projeto / "Docs"
     pasta_figuras = raiz_projeto / "figuras_analise"
-    arquivo_saida = pasta_docs / "Saida_Analise_Descritiva.md"
+    arquivo_saida = pasta_docs / "resultado_descritiva.md"
     
     if not caminho_notebook.exists():
         print(f"Erro: Notebook não encontrado em {caminho_notebook}")
