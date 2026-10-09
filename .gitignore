@@ -23,3 +23,14 @@ Thumbs.db
 # Local environment files
 .env
 .env.*
+
+# ========================================================
+# Sigilo Acadêmico - Artigo Inédito para o XII SIMPÓS
+# ========================================================
+SIMPOS/TrabalhoCompleto*
+SIMPOS/*.doc
+SIMPOS/*.docx
+SIMPOS/*.pdf
+Revisao/
+Docs/
+
