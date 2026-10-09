@@ -4,14 +4,14 @@ import pandas as pd
 from scipy.stats import chi2_contingency
 
 
-def executa_teste_quiquadrado(df, coluna_fator):
+def executa_teste_quiquadrado(df, fator):
     """
     Executa o teste Qui-quadrado de Independência (Nível Discente),
     calcula o Tamanho do Efeito (V de Cramér) com classificação de intensidade
     e gera a Tabela de Contingência Discente (Concluintes x Ingressantes).
     """
     # 1. Totalizar Concluintes e Ingressantes por categoria
-    df_chi = df.groupby(coluna_fator).agg(
+    df_chi = df.groupby(fator).agg(
         CONCLUINTES=('CONCLUINTES', 'sum'),
         INGRESSANTES=('INGRESSANTES', 'sum')
     ).reset_index()
@@ -25,7 +25,7 @@ def executa_teste_quiquadrado(df, coluna_fator):
 
     # 3. Tabela de Contingência 2 x K para o teste
     tabela_contingencia = df_chi[['CONCLUINTES', 'RETIDOS']].T
-    tabela_contingencia.columns = df_chi[coluna_fator]
+    tabela_contingencia.columns = df_chi[fator]
 
     chi2, p_valor, gl, _ = chi2_contingency(tabela_contingencia)
 
@@ -42,6 +42,6 @@ def executa_teste_quiquadrado(df, coluna_fator):
         intensidade = "Forte"
 
     # 6. Tabela formatada para exibição (1º item do retorno)
-    tab_chi = df_chi[[coluna_fator, 'CONCLUINTES', 'RETIDOS', 'INGRESSANTES', 'TAXA_MEDIA_GERAL']]
+    tab_chi = df_chi[[fator, 'CONCLUINTES', 'RETIDOS', 'INGRESSANTES', 'TAXA_MEDIA_GERAL']]
 
     return tab_chi, chi2, p_valor, v_cramer, intensidade

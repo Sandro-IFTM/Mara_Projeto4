@@ -1,11 +1,11 @@
 import pandas as pd
 import scipy.stats as stats
 
-def executa_tukey_hsd(df_inst, coluna_fator):
+def executa_tukey_hsd(df_inst, fator):
 
     """Executa o teste de Tukey HSD e imprime os resultados."""
 
-    grupos_dict = {cat: g['TAXA_MEDIA_IF'].values for cat, g in df_inst.groupby(coluna_fator)}
+    grupos_dict = {cat: g['TAXA_MEDIA_IF'].values for cat, g in df_inst.groupby(fator)}
     nomes = list(grupos_dict.keys())
     valores = [grupos_dict[k] for k in nomes]
     res_tukey = stats.tukey_hsd(*valores)

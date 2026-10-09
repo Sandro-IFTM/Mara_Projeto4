@@ -5,13 +5,13 @@ import pandas as pd
 from scipy.stats import chi2_contingency
 
 
-def executa_posthoc_quiquadrado(df, coluna_fator):
+def executa_posthoc_quiquadrado(df, fator):
     """
     Executa comparações múltiplas par a par via Qui-Quadrado 2 x 2 (Nível Discente)
     com correção de Bonferroni e cálculo do V de Cramér para cada par.
     """
     # 1. Totalizar Concluintes e Ingressantes por categoria
-    df_chi = df.groupby(coluna_fator).agg(
+    df_chi = df.groupby(fator).agg(
         CONCLUINTES=('CONCLUINTES', 'sum'),
         INGRESSANTES=('INGRESSANTES', 'sum')
     ).reset_index()
@@ -19,7 +19,7 @@ def executa_posthoc_quiquadrado(df, coluna_fator):
     df_chi['TAXA'] = (df_chi['CONCLUINTES'] / df_chi['INGRESSANTES']) * 100
     df_chi = df_chi.sort_values(by='TAXA', ascending=False).reset_index(drop=True)
 
-    cats = df_chi[coluna_fator].tolist()
+    cats = df_chi[fator].tolist()
     if len(cats) <= 2:
         return None
 
@@ -28,8 +28,8 @@ def executa_posthoc_quiquadrado(df, coluna_fator):
 
     linhas = []
     for c1, c2 in pares:
-        d1 = df_chi[df_chi[coluna_fator] == c1].iloc[0]
-        d2 = df_chi[df_chi[coluna_fator] == c2].iloc[0]
+        d1 = df_chi[df_chi[fator] == c1].iloc[0]
+        d2 = df_chi[df_chi[fator] == c2].iloc[0]
 
         # Tabela 2 x 2
         tab = [

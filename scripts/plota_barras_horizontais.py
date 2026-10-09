@@ -17,17 +17,17 @@ def plota_barras_horizontais(df, tab_fator, fator, titulo_fator, stat='TAXA_MEDI
     # 1. Configurar métrica, títulos e linha de referência conforme o tipo
     if stat == 'TAXA_MEDIA_GERAL':
         col_metrica = 'TAXA_MEDIA_GERAL'
-        titulo = f'Taxa Ponderada Global de Conclusão por {titulo_fator} (Nível Discente)'
-        label_x = 'Taxa Ponderada de Conclusão (%)'
+        titulo = f'Taxa média geral de conclusão por {titulo_fator}'
+        label_x = 'Taxa média geral de Conclusão(%)'
         media_ref = (df['CONCLUINTES'].sum() / df['INGRESSANTES'].sum()) * 100
-        rotulo_ref = f'Média Geral da Rede ({media_ref:.1f}%)'
+        rotulo_ref = f'Taxa média geral de conclusão da Rede ({media_ref:.1f}%)'
         paleta = paleta_cores if paleta_cores else 'Blues_r'
     else:  # 'TAXA_MEDIA_IF' ou 'TAXA_MEDIA_INST'
         col_metrica = 'TAXA_MEDIA_IF'
-        titulo = f'Média Institucional de Conclusão por {titulo_fator} (Nível Institucional)'
-        label_x = 'Média Simples das Instituições (%)'
+        titulo = f'Taxa média de conclusão dos IFs por {titulo_fator}'
+        label_x = 'Taxa média de conclusão dos IFs (%)'
         media_ref = df_inst['TAXA_MEDIA_IF'].mean() if df_inst is not None else tab_fator['TAXA_MEDIA_IF'].mean()
-        rotulo_ref = f'Média Institucional dos IFs ({media_ref:.1f}%)'
+        rotulo_ref = f'Taxa média de conclusão dos IFs ({media_ref:.1f}%)'
         paleta = paleta_cores if paleta_cores else 'Blues_r'
 
     # 2. Ordenar decrescente pela métrica selecionada
@@ -90,7 +90,7 @@ def plota_barras_horizontais(df, tab_fator, fator, titulo_fator, stat='TAXA_MEDI
 
     plt.legend(
         loc='upper center',
-        bbox_to_anchor=(0.5, -0.08),
+        bbox_to_anchor=(1.0, -0.08),
         frameon=False,
         fontsize=10.5
     )

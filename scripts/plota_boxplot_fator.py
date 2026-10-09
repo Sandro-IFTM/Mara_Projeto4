@@ -43,7 +43,7 @@ def plota_boxplot_fator(df, df_inst, fator, titulo_fator, ordem=None, paleta_cor
             "markerfacecolor": "red",
             "markeredgecolor": "black",
             "markersize": 7,
-            "label": "Média da Classe"
+            "label": f"Taxa média de conclusão dos IFs por {fator}"
         },
         boxprops=dict(alpha=0.85)
     )
@@ -66,7 +66,7 @@ def plota_boxplot_fator(df, df_inst, fator, titulo_fator, ordem=None, paleta_cor
         color='#333333',
         linestyle='--',
         linewidth=1.3,
-        label=f'Média Institucional dos IFs ({media_inst:.1f}%)'
+        label=f'Taxa média de conclusão dos IFs ({media_inst:.1f}%)'
     )
 
     # 7. Títulos e rótulos
@@ -75,14 +75,14 @@ def plota_boxplot_fator(df, df_inst, fator, titulo_fator, ordem=None, paleta_cor
     ax.xaxis.set_label_position('top')
 
     plt.title(
-        f'Distribuição da Taxa de Conclusão por {titulo_fator} nos Institutos Federais',
+        f'Distribuição das taxas médias de conclusão dos IFs por {titulo_fator}',
         fontsize=14,
         weight='bold',
         loc='left',
         pad=28
     )
     plt.xlabel(
-        'Taxa de Conclusão (%) [Ponto Vermelho = Média | Pontos Pretos = Cada IF]',
+        'Taxa média de conclusão dos IFs (%) [Ponto Vermelho] | Taxa de conclusão de cada IF [Pontos Pretos]',
         fontsize=11,
         loc='left',
         labelpad=10
